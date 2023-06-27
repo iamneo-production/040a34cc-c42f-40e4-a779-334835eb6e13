@@ -1,7 +1,7 @@
-package com.example.springapp.Repository;
+package com.examly.springapp.Repository;
 
 
-import com.example.springapp.Entity.Role;
+import com.examly.springapp.Model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

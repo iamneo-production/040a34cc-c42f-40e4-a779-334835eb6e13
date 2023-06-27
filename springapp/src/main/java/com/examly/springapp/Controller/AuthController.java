@@ -1,12 +1,12 @@
-package com.example.springapp.Controller;
+package com.examly.springapp.Controller;
 
-import com.example.springapp.DTO.LoginDto;
-import com.example.springapp.DTO.SignUpDto;
-import com.example.springapp.Entity.Role;
-import com.example.springapp.Entity.User;
+import com.examly.springapp.DTO.LoginDto;
+import com.examly.springapp.DTO.SignUpDto;
+import com.examly.springapp.Model.Role;
+import com.examly.springapp.Model.User;
 
-import com.example.springapp.Repository.RoleRepository;
-import com.example.springapp.Repository.UserRepository;
+import com.examly.springapp.Repository.RoleRepository;
+import com.examly.springapp.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -51,10 +51,13 @@ public class AuthController {
 
 
         User user = new User();
-        user.setName(signUpDto.getName());
-        user.setUsername(signUpDto.getUsername());
+        user.setUserName(signUpDto.getUserName());
+        user.setFirstName(signUpDto.getFirstName());
+        user.setLastName(signUpDto.getLastName());
         user.setEmail(signUpDto.getEmail());
         user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));
+        user.setAddress(signUpDto.getAddress());
+        user.setPhoneNumber(signUpDto.getPhoneNumber());
 
         Role roles = roleRepository.findByName("ROLE_USER").get();
         user.setRoles(Collections.singleton(roles));

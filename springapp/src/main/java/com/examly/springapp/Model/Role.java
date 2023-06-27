@@ -1,4 +1,4 @@
-package com.example.springapp.Entity;
+package com.examly.springapp.Model;
 
 import lombok.Getter;
 import lombok.Setter;

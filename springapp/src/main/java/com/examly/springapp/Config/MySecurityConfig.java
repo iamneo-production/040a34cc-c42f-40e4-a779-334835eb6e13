@@ -1,6 +1,6 @@
-package com.example.springapp.Config;
+package com.examly.springapp.Config;
 
-import com.example.springapp.Service.CustomUserDetailsService;
+import com.examly.springapp.Service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

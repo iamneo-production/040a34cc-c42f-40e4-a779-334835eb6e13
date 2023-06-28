@@ -9,6 +9,6 @@ public class AdminController {
 
     @RequestMapping
     public String userPage () {
-        return "displying the admin page and its contents";
+        return "displying the admin page contents";
     }
 }

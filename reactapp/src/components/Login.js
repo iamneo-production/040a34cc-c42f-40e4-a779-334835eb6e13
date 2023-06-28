@@ -22,7 +22,7 @@ const Login = () => {
     setForgotPassword(false);
     setEmail("");
   };
-
+  
   return (
     <div className="">
       <title>Login Page</title>

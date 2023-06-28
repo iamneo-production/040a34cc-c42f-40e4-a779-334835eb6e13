@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Login.css";
 import LoginImage from "./LoginImage.jpeg";
 
-
 const Login = () => {
   const [forgotPassword, setForgotPassword] = useState(false);
   const [email, setEmail] = useState("");

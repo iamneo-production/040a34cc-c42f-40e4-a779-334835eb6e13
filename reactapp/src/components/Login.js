@@ -25,7 +25,6 @@ const Login = () => {
   return (
     <div className="">
       <title>Login Page</title>
-
       <div class="container">
         <div class="content img1">
           <div class="image">

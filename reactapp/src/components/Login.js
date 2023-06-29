@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
-import LoginImage from "./LoginImage.jpeg";
+import LoginImage from "../Images/LoginImage";
 
 const Login = () => {
   const [forgotPassword, setForgotPassword] = useState(false);
@@ -21,10 +21,11 @@ const Login = () => {
     setForgotPassword(false);
     setEmail("");
   };
-  
+
   return (
     <div className="">
       <title>Login Page</title>
+
       <div class="container">
         <div class="content img1">
           <div class="image">

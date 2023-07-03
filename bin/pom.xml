@@ -9,13 +9,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <sonar.organization>iamneo-production</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-<<<<<<< HEAD
-        <sonar.sources>src/springapp/main</sonar.sources>
-        <sonar.tests>src/springapp/test</sonar.tests>
-=======
-        <sonar.sources>src/springapp/main</sonar.sources>
-        <sonar.tests>src/springapp/test</sonar.tests>
->>>>>>> 551f0ce2011802a061d2f5f5a9f02935353771c1
+        <sonar.sources></sonar.sources>
+        <sonar.tests></sonar.tests>
         <sonar.java.binaries>target</sonar.java.binaries>
     </properties>
     <dependencies>

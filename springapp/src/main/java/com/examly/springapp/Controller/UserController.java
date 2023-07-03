@@ -1,9 +1,9 @@
-package com.example.springapp.Controller;
+package com.examly.springapp.Controller;
 
-import com.example.springapp.DTO.SignUpDto;
-import com.example.springapp.Exception.ResourceNotFoundException;
-import com.example.springapp.Entity.User;
-import com.example.springapp.Repository.UserRepository;
+import com.examly.springapp.DTO.SignUpDto;
+import com.examly.springapp.Exception.ResourceNotFoundException;
+import com.examly.springapp.Entity.User;
+import com.examly.springapp.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

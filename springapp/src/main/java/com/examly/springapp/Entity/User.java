@@ -1,4 +1,4 @@
-package com.example.springapp.Entity;
+package com.examly.springapp.Entity;
 
 
 import lombok.Data;

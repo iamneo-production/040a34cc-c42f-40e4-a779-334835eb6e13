@@ -1,4 +1,4 @@
-package com.example.springapp.Config;
+package com.examly.springapp.Config;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

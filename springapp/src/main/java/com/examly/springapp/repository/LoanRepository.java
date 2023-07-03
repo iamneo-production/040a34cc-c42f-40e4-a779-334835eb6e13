@@ -1,11 +1,11 @@
-package main.java.com.examly.springapp.repository;
+package com.examly.springapp.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import main.java.com.examly.springapp.model.Loan;
+import com.examly.springapp.model.Loan;
 
 @Repository
 public interface LoanRepository extends JpaRepository<Loan,Long>{

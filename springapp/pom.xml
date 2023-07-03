@@ -9,7 +9,7 @@
 		<version>2.7.10</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>com.examly</groupId>
 	<artifactId>springapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springapp</name>

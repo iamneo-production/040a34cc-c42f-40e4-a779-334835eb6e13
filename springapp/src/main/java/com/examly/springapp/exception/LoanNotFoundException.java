@@ -1,4 +1,4 @@
-package com.examly.springapp.Exception;
+package com.examly.springapp.exception;
 
 public class LoanNotFoundException extends RuntimeException {
 	public LoanNotFoundException() {

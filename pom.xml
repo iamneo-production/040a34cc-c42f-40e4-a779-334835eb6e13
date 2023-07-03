@@ -13,8 +13,8 @@
         <sonar.sources></sonar.sources>
         <sonar.tests></sonar.tests>
 =======
-        <sonar.sources>src/springapp/main</sonar.sources>
-        <sonar.tests>src/springapp/test</sonar.tests>
+        <sonar.sources></sonar.sources>
+        <sonar.tests></sonar.tests>
 >>>>>>> Education-loan-portal-karthi-0212
         <sonar.java.binaries>target</sonar.java.binaries>
     </properties>

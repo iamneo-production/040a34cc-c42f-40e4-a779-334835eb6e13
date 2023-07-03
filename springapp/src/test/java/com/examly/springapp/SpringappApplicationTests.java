@@ -1,17 +1,5 @@
 package com.examly.springapp;
 
-<<<<<<< HEAD
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class SpringappApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
-=======
 import org.springframework.http.MediaType;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -124,5 +112,4 @@ class SpringappApplicationTests {
 
 	
 
->>>>>>> Education-loan-portal-karthi-0212
 }

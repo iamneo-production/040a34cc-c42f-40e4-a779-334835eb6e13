@@ -1,8 +1,8 @@
-package main.java.com.examly.springapp.service;
+package com.examly.springapp.service;
 
 import org.springframework.stereotype.Service;
 
-import main.java.com.examly.springapp.model.Payment;
+import com.examly.springapp.model.Payment;
 
 import javax.mail.MessagingException;
 

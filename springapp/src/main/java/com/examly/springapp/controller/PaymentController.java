@@ -1,4 +1,4 @@
-package main.java.com.examly.springapp.controller;
+package com.examly.springapp.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import main.java.com.examly.springapp.model.Payment;
-import main.java.com.examly.springapp.repository.PaymentRepository;
-import main.java.com.examly.springapp.service.PaymentService;
+import com.examly.springapp.model.Payment;
+import com.examly.springapp.repository.PaymentRepository;
+import com.examly.springapp.service.PaymentService;
 
 import javax.mail.MessagingException;
 

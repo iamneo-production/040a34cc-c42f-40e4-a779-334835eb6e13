@@ -1,4 +1,4 @@
-package main.java.com.examly.springapp.controller;
+package com.examly.springapp.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import main.java.com.examly.springapp.model.Loan;
-import main.java.com.examly.springapp.service.LoanService;
-import main.java.com.examly.springapp.repository.LoanRepository;
+import com.examly.springapp.model.Loan;
+import com.examly.springapp.service.LoanService;
+import com.examly.springapp.repository.LoanRepository;
 
 @RestController
 public class LoanController {

@@ -1,4 +1,4 @@
-package main.java.com.examly.springapp.service;
+package com.examly.springapp.service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -9,15 +9,15 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
-import main.java.com.examly.springapp.model.Payment;
-import main.java.com.examly.springapp.model.User;
-import main.java.com.examly.springapp.repository.PaymentRepository;
-import main.java.com.examly.springapp.repository.LoanRepository;
-import main.java.com.examly.springapp.repository.UserRepository;
+import com.examly.springapp.model.Payment;
+import com.examly.springapp.model.User;
+import com.examly.springapp.repository.PaymentRepository;
+import com.examly.springapp.repository.LoanRepository;
+import com.examly.springapp.repository.UserRepository;
 
 import javax.mail.MessagingException;
 
-import main.java.com.examly.springapp.model.Loan;
+import com.examly.springapp.model.Loan;
 
 
 @Service

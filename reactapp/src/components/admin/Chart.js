@@ -9,6 +9,7 @@ const data = [
     { name:"May", Total: 560000},
     { name:"June", Total: 300000},
   ];
+  //testing
 export default function Chart() {
   return (
     <>

@@ -1,0 +1,33 @@
+.user-info-items{
+    padding: 10px;
+}
+.user-info-title{
+    font-size: 24px;
+    color: #000080;
+    margin-bottom: 20px;
+}
+.user-info-item{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.item-key{
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+    margin-right: 5px;
+}
+.item-value{
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.send-notification-button{
+    border-radius: 5px;
+    color: white;
+    /* background-color: rgb(123, 109, 250); */
+    background-color: #000080;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+}
+

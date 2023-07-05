@@ -9,8 +9,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import profileImage from "../Images/userimg.jpg";
-
+import Navbar from "./Navbar";
+// const User = {
+//   name: "Priyanshu",
+//   UserId: 1,
+//   Email: "pri@virtusa",
+//   mob: 9876543210,
+// };
 function Profile() {
+  <Navbar />;
   return (
     <>
       <Table>

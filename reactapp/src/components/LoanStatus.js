@@ -2,7 +2,7 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import { Button } from "react-bootstrap";
-//testing
+import Navbar from "./Navbar";
 const Loanstatus = () => {
   const LoanStatus = [
     {
@@ -41,6 +41,10 @@ const Loanstatus = () => {
       status: "Approved",
     },
   ];
+
+  <>
+    <Navbar />
+  </>;
   return (
     <Container style={{ paddingTop: "30px" }}>
       <h3 style={{ color: "black", padding: 20, textAlign: "center" }}>

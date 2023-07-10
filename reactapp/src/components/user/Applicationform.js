@@ -679,6 +679,126 @@ function Applicationform() {
                   </div>
                 </div>
 
+
+
+
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      Date of Application<span className="text-danger">*</span>
+                    </label>
+                    <br />
+                    <DatePicker
+                      selected={selectedDate}
+                      onChange={handleDateChange}
+                      dateFormat="dd/MM/yyyy"
+                      className="form-control"
+                    >
+                      <input
+                        type="text"
+                        className="form-control"
+                        {...register("doa", {
+                          required: "Date of Application is required",
+                        })}
+                      />
+                    </DatePicker>
+                    {errors.doa && (
+                      <span className="text-danger">{errors.doa.message}</span>
+                    )}
+                  </div>
+                </div>
+
+                <h3>Bank Details</h3>
+
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      Bank Name<span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("bankName", {
+                        required: "Bank Name is required",
+                      })}
+                    />
+                    {errors.bankName && (
+                      <span className="text-danger">
+                        {errors.bankName.message}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      Bank Branch<span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("bankBranch", {
+                        required: "Bank Branch is required",
+                      })}
+                    />
+                    {errors.bankBranch && (
+                      <span className="text-danger">
+                        {errors.bankBranch.message}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      Account Holder Name<span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("accountHolderName", {
+                        required: "Account Holder Name is required",
+                      })}
+                    />
+                    {errors.accountHolderName && (
+                      <span className="text-danger">
+                        {errors.accountHolderName.message}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      Account Type<span className="text-danger">*</span>
+                    </label>
+                    <select
+                      name="accountType"
+                      {...register("accountType", {
+                        required: "Account Type is required",
+                      })}
+                      className="form-control"
+                    >
+                      <option value="">--Please Select--</option>
+                      <option value="Savings">Savings</option>
+                      <option value="Current">Current</option>
+                    </select>
+                    {errors.accountType && (
+                      <span className="text-danger">
+                        {errors.accountType.message}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+
+
+
+
+
                 <div className=" mt-3 mb-4">
                   <label className="form-lable"></label>
 

@@ -1,7 +1,6 @@
 package com.examly.springapp.model;
 
 import java.sql.Date;
-import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,22 +43,12 @@ public class LoanApplication {
 	private int contactNo;
 	private int aadharNo;
 	private String panNo;
+	private String address1;
+	private String address2;
 	private String maritalStatus;
-	private String Country;
+	private String country;
 	private String state;
 	private int pincode;
-	
-	
-	// Loan details
-	private String loanType;
-	private Double loanAmount;
-	private String purpose;
-	
-	// Fetching current date  
-	private LocalDate applicationDate = LocalDate.now();
-	
-	private int noOfInstallments;
-	private double amountPerMonth;
 	
 	
 	// Bank details

@@ -29,9 +29,9 @@ public class LoanApplicationService {
 	
 	
 	// Update an existing loan application by ID
-	public LoanApplication updateLoanApplication(Long userId, LoanApplication la) {
+	public LoanApplication updateLoanApplication(Long id, LoanApplication la) {
 		
-        LoanApplication existingUser = loanRepo.findById(userId).orElse(null);
+        LoanApplication existingUser = loanRepo.findById(id).orElse(null);
         
         if (existingUser != null) 
         {
@@ -50,25 +50,17 @@ public class LoanApplicationService {
             existingUser.setFamilyIncome(la.getFamilyIncome());
             existingUser.setCategory(la.getCategory());
             existingUser.setEmailId(la.getEmailId());
-            existingUser.setFathersName(la.getFathersName());
-            existingUser.setFamilyIncome(la.getFamilyIncome());
-            existingUser.setCategory(la.getCategory());
-            existingUser.setEmailId(la.getEmailId());
             existingUser.setContactNo(la.getContactNo());
             existingUser.setAadharNo(la.getAadharNo());
             existingUser.setPanNo(la.getPanNo());
+            existingUser.setAddress1(la.getAddress1());
+            existingUser.setAddress2(la.getAddress2());
             existingUser.setMaritalStatus(la.getMaritalStatus());
             existingUser.setCountry(la.getCountry());
             existingUser.setState(la.getState());
             existingUser.setPincode(la.getPincode());
             
-            // Update loan details
-            existingUser.setLoanType(la.getLoanType());
-            existingUser.setLoanAmount(la.getLoanAmount());
-            existingUser.setPurpose(la.getPurpose());
-            existingUser.setApplicationDate(la.getApplicationDate());
-            existingUser.setNoOfInstallments(la.getNoOfInstallments());
-            existingUser.setAmountPerMonth(la.getAmountPerMonth());
+            
             
             // Update bank details
             existingUser.setBankName(la.getBankName());
@@ -151,4 +143,6 @@ public class LoanApplicationService {
 	}
 	
 }
+
+
 

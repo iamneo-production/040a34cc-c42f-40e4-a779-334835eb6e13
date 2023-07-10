@@ -1,17 +1,18 @@
 package com.examly.springapp.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.examly.springapp.model.Loan;
+import com.project.loanPortalMain.model.LoanApplication;
 
 @Repository
-public interface LoanRepository extends JpaRepository<Loan,Long>{
-	List<Loan> findByLoanId(long id);
-
-	Loan findByUserId(long id);
-
-	Loan findByUserIdAndLoanId(Long userId, Long loanId);
+public interface LoanApplicationRepository extends JpaRepository<LoanApplication, Long> {
+	
+	List<LoanApplication> findByUserId(Long userId);
+	List<LoanApplication> findByStatus(String status);
+	Optional<LoanApplication> findByUserIdAndId(Long userId, Long id);
+	
 }

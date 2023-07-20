@@ -1,0 +1,31 @@
+.user-table-container{
+    height: 600px;
+    padding: 20px;
+}
+.user-cell-action{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.user-cell-view-button{
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: green;
+    border: 1px dotted rgb(120, 241, 104);
+    cursor: pointer;
+    text-decoration: none;
+}
+.user-table-header{
+    color: #000080;
+}
+.user-search-bar{
+    display: flex;
+    margin-bottom: 10px;
+}
+.user-search-bar input{
+    width: 200px;
+    height: 30px;
+    padding: 4px;
+    display: flex;
+    outline: none;
+}

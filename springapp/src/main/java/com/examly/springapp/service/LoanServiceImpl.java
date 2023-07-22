@@ -100,6 +100,7 @@ public class LoanServiceImpl implements LoanService{
 
 	@Override
 	public void addUserLoan(Loan loan) {
+		loan.setLoanTenure(4);
 		double EMI=calculateEMI(
 				loan.getLoanAmount(),
 				loan.getInterestRate(), 

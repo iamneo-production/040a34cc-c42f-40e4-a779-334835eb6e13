@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.loanPortalMain.model.LoanApplication3;
-import com.project.loanPortalMain.repository.LoanApplication3Repository;
+import com.examly.springapp.model.LoanApplication3;
+import com.examly.springapp.repository.LoanApplication3Repository;
 
 @Service
 public class LoanApplication3Service {

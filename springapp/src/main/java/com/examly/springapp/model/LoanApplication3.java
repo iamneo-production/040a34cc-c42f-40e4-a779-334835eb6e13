@@ -1,14 +1,14 @@
 package com.examly.springapp.model;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
-import jakarta.persistence.Table;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -112,5 +112,173 @@ public class LoanApplication3 {
     @Basic(fetch = FetchType.LAZY)
     @Column(columnDefinition = "LONGBLOB")
     private byte[] proofOfIncome;
+
+    public Long getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(Long imageId) {
+        this.imageId = imageId;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getTenthMarksheetFileName() {
+        return tenthMarksheetFileName;
+    }
+
+    public void setTenthMarksheetFileName(String tenthMarksheetFileName) {
+        this.tenthMarksheetFileName = tenthMarksheetFileName;
+    }
+
+    public byte[] getTenthMarksheet() {
+        return tenthMarksheet;
+    }
+
+    public void setTenthMarksheet(byte[] tenthMarksheet) {
+        this.tenthMarksheet = tenthMarksheet;
+    }
+
+    public String getTwelvethMarksheetFileName() {
+        return twelvethMarksheetFileName;
+    }
+
+    public void setTwelvethMarksheetFileName(String twelvethMarksheetFileName) {
+        this.twelvethMarksheetFileName = twelvethMarksheetFileName;
+    }
+
+    public byte[] getTwelvethMarksheet() {
+        return twelvethMarksheet;
+    }
+
+    public void setTwelvethMarksheet(byte[] twelvethMarksheet) {
+        this.twelvethMarksheet = twelvethMarksheet;
+    }
+
+    public String getProofOfAdmissionFileName() {
+        return proofOfAdmissionFileName;
+    }
+
+    public void setProofOfAdmissionFileName(String proofOfAdmissionFileName) {
+        this.proofOfAdmissionFileName = proofOfAdmissionFileName;
+    }
+
+    public byte[] getProofOfAdmission() {
+        return proofOfAdmission;
+    }
+
+    public void setProofOfAdmission(byte[] proofOfAdmission) {
+        this.proofOfAdmission = proofOfAdmission;
+    }
+
+    public String getLandRecordsFileName() {
+        return landRecordsFileName;
+    }
+
+    public void setLandRecordsFileName(String landRecordsFileName) {
+        this.landRecordsFileName = landRecordsFileName;
+    }
+
+    public byte[] getLandRecords() {
+        return landRecords;
+    }
+
+    public void setLandRecords(byte[] landRecords) {
+        this.landRecords = landRecords;
+    }
+
+    public String getApplicantsPhotoFileName() {
+        return applicantsPhotoFileName;
+    }
+
+    public void setApplicantsPhotoFileName(String applicantsPhotoFileName) {
+        this.applicantsPhotoFileName = applicantsPhotoFileName;
+    }
+
+    public byte[] getApplicantsPhoto() {
+        return applicantsPhoto;
+    }
+
+    public void setApplicantsPhoto(byte[] applicantsPhoto) {
+        this.applicantsPhoto = applicantsPhoto;
+    }
+
+    public String getFeeStructureFileName() {
+        return feeStructureFileName;
+    }
+
+    public void setFeeStructureFileName(String feeStructureFileName) {
+        this.feeStructureFileName = feeStructureFileName;
+    }
+
+    public byte[] getFeeStructure() {
+        return feeStructure;
+    }
+
+    public void setFeeStructure(byte[] feeStructure) {
+        this.feeStructure = feeStructure;
+    }
+
+    public String getAadharCardPhotoFileName() {
+        return aadharCardPhotoFileName;
+    }
+
+    public void setAadharCardPhotoFileName(String aadharCardPhotoFileName) {
+        this.aadharCardPhotoFileName = aadharCardPhotoFileName;
+    }
+
+    public byte[] getAadharCardPhoto() {
+        return aadharCardPhoto;
+    }
+
+    public void setAadharCardPhoto(byte[] aadharCardPhoto) {
+        this.aadharCardPhoto = aadharCardPhoto;
+    }
+
+    public String getPanCardPhotoFileName() {
+        return panCardPhotoFileName;
+    }
+
+    public void setPanCardPhotoFileName(String panCardPhotoFileName) {
+        this.panCardPhotoFileName = panCardPhotoFileName;
+    }
+
+    public byte[] getPanCardPhoto() {
+        return panCardPhoto;
+    }
+
+    public void setPanCardPhoto(byte[] panCardPhoto) {
+        this.panCardPhoto = panCardPhoto;
+    }
+
+    public String getProofOfIncomeFileName() {
+        return proofOfIncomeFileName;
+    }
+
+    public void setProofOfIncomeFileName(String proofOfIncomeFileName) {
+        this.proofOfIncomeFileName = proofOfIncomeFileName;
+    }
+
+    public byte[] getProofOfIncome() {
+        return proofOfIncome;
+    }
+
+    public void setProofOfIncome(byte[] proofOfIncome) {
+        this.proofOfIncome = proofOfIncome;
+    }
 	
 }

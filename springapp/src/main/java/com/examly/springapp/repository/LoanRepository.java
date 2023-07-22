@@ -9,10 +9,13 @@ import org.springframework.stereotype.Repository;
 import com.examly.springapp.model.Loan;
 
 @Repository
-public interface LoanApplicationRepository extends JpaRepository<LoanApplication, Long> {
+public interface LoanRepository extends JpaRepository<Loan, Long> {
 	
-	List<LoanApplication> findByUserId(Long userId);
-	List<LoanApplication> findByStatus(String status);
-	Optional<LoanApplication> findByUserIdAndId(Long userId, Long id);
+	
+    List<Loan> findByLoanId(long id);
+
+    Loan findByUserId(long id);
+
+    Loan findByUserIdAndLoanId(Long userId, Long loanId);
 	
 }

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.project.loanPortalMain.model.LoanApplication3;
-import com.project.loanPortalMain.service.LoanApplication3Service;
+import com.examly.springapp.model.LoanApplication3;
+import com.examly.springapp.service.LoanApplication3Service;
 
 
 @RestController

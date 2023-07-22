@@ -23,7 +23,7 @@ import com.examly.springapp.repository.UserRepository;
 import javax.mail.internet.MimeMessage;
 import javax.mail.MessagingException;
 
-import com.examly.springapp.Exception.*;
+import com.examly.springapp.exception.*;
 
 @Service
 public class LoanServiceImpl implements LoanService{
@@ -100,6 +100,7 @@ public class LoanServiceImpl implements LoanService{
 
 	@Override
 	public void addUserLoan(Loan loan) {
+		loan.setLoanTenure(4);
 		double EMI=calculateEMI(
 				loan.getLoanAmount(),
 				loan.getInterestRate(), 

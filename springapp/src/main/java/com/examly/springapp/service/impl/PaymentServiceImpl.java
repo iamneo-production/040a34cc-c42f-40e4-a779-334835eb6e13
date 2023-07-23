@@ -1,7 +1,9 @@
-package com.examly.springapp.service;
+package com.examly.springapp.service.impl;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -12,12 +14,14 @@ import org.springframework.stereotype.Service;
 import com.examly.springapp.model.Payment;
 import com.examly.springapp.model.User;
 import com.examly.springapp.repository.PaymentRepository;
-import com.examly.springapp.repository.LoanRepository;
+import com.examly.springapp.repository.UserLoanRepository;
 import com.examly.springapp.repository.UserRepository;
+import com.examly.springapp.service.PaymentService;
+import com.examly.springapp.service.UserLoanService;
 
 import javax.mail.MessagingException;
 
-import com.examly.springapp.model.Loan;
+import com.examly.springapp.entity.UserLoans;
 
 
 @Service
@@ -26,68 +30,61 @@ public class PaymentServiceImpl implements PaymentService{
 	@Autowired
 	private PaymentRepository paymentRepository;
 	
-	//@Autowired 
+	@Autowired 
 	private JavaMailSender mailSender;
 	
 	@Autowired
-	private LoanService loanService;
+	private UserLoanService userLoanService;
 	
 	@Autowired
 	private UserRepository userRepository;
 	
 	@Autowired
-	private LoanRepository loanRepository;
+	private UserLoanRepository userLoanRepository;
 	
-	Loan loan;
+	UserLoans userLoan;
 	
-	User user;
+	Optional<User> user;
 	
 	@Override
 	public void addPayment(Payment payment) throws MessagingException {
-		loan=loanRepository.findByUserId(payment.getUserId());
-		double penalty=0;
-		if(!loanService.isPaymentLate(loan.getLoanNextDueDate())) {
-			penalty=payment.getAmount()*0.05;
-		}
-		if(!loanService.isPaymentRight(payment.getAmount(), loan.getEMI())) {
-			penalty=payment.getAmount()*0.05;
-		}
-		payment.setPenaltyAmount(penalty);
-		payment.setForLoan(payment.getAmount()-penalty);
+		userLoan=userLoanRepository.findByUserId(payment.getUserId());
+		user=userRepository.findById(payment.getUserId());
 		payment.setPaymentDate(LocalDate.now());
 		payment.setPaymentTime(LocalTime.now());
+		payment.setName(user.get().getFirstName());
+		payment.setEmail(user.get().getEmail());
+		double amount=payment.getAmount();
+		String formatAmount=String.format("%.2f",amount);
+		payment.setAmount(Double.parseDouble(formatAmount));
 		paymentRepository.save(payment);
-		loanService.updateUserDetails(payment);
+		userLoanService.updateUserDetails(payment);
 		sendEmail(payment);	
 	}
 
 	@Override
 	public void sendEmail(Payment payment) {
 		
-		user=userRepository.findByUserId(payment.getUserId());
+		user=userRepository.findById(payment.getUserId());
+		String to="";
+		String name="";
+		if(user.isPresent()) {
+			User directUser=user.get();
+			to=directUser.getEmail();
+			name=directUser.getFirstName();
+		}
 		String from="virtusaeducationloanportal@gmail.com";
-		String to=user.getEmail();
 		String subject="Payment Successfull - Receipt";
-		String mailContent="Dear "+user.getEmail()+",\n\n We are writing to inform you that "
+		String mailContent="Dear "+name+",\n\nWe are writing to inform you that "
 				+ "your recent payment has been successfullly processed. We appreciate"
 				+ " your prompt action in fulfilling your financial obligation."
 				+ "\n\nPayment Details:\n\npayment Date : "+payment.getPaymentDate()+
 				"\nPayment Method : "+payment.getPaymentMethod()+"\nTransaction iD : "+
-				payment.getTransactionId()+"\nPaid Amount : "+payment.getAmount()+
+				"\nPaid Amount : "+payment.getAmount()+
 				"\n\n\n";
-		loan=loanRepository.findByUserId(payment.getUserId());
-		double penaltyLate=0;
-		double penaltyEMI=0;
-		if(!loanService.isPaymentLate(loan.getLoanNextDueDate())) {
-			penaltyLate=payment.getAmount()*0.05;
-			mailContent+="Penalty Amount : "+penaltyLate+"\n(For Late Payment)\n";
-		}
-		if(!loanService.isPaymentRight(payment.getAmount(), loan.getEMI())) {
-			penaltyEMI=payment.getAmount()*0.05;
-			mailContent+="Penalty Amount : "+penaltyEMI+"\n(For Payment Amount Lesser Than EMI)\n\n\n";
-		}
-		mailContent+="Loan Repay Amount : "+(payment.getAmount()-penaltyLate-penaltyEMI)+"\nPenalty Amount : "+
-				(penaltyLate+penaltyEMI)+"\n\n\nBest regards,\nVirtusa Education Loan Portal";
+		userLoan=userLoanRepository.findByUserId(payment.getUserId());
+		
+		mailContent+="\n\n\nBest regards,\nVirtusa Education Loan Portal";
 		
 		JavaMailSenderImpl javaMailSender=new JavaMailSenderImpl();
 		javaMailSender.setHost("smtp.gmail.com");
@@ -103,5 +100,15 @@ public class PaymentServiceImpl implements PaymentService{
         message.setSubject(subject);
         message.setText(mailContent);
         mailSender.send(message);
+	}
+
+	@Override
+	public List<Payment> getPayment(long id) {
+		return paymentRepository.findAllByUserId(id);
+	}
+
+	@Override
+	public List<Payment> getAllPayment() {
+		return paymentRepository.findAll();
 	}
 }

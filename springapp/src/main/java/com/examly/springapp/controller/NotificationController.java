@@ -1,7 +1,6 @@
 package com.examly.springapp.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,34 +13,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.examly.springapp.model.Payment;
-import com.examly.springapp.service.PaymentService;
+import com.examly.springapp.model.Notification;
+import com.examly.springapp.service.NotificationService;
 
-import javax.mail.MessagingException;
 
 @RestController
-@RequestMapping("/payment")
+@RequestMapping("/notifications")
 @CrossOrigin
-public class PaymentController {
+public class NotificationController {
 	
 	@Autowired
-	private PaymentService paymentService; 
+	private NotificationService notificationService;
 	
 	@PostMapping
-	public ResponseEntity<String> addPayment(@RequestBody Payment payment) throws MessagingException {
-		paymentService.addPayment(payment);
-		return new ResponseEntity<>("Payment Successfull",HttpStatus.OK);
+	public ResponseEntity<String> addNotification(@RequestBody Notification notification){
+		notificationService.addNotification(notification);
+		return new ResponseEntity<>("Notification added Successfully",HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
-	public List<Payment> getPayment(@PathVariable long id) {
-		return paymentService.getPayment(id);
+	public List<Notification> getNotification(@PathVariable long id) {
+		return notificationService.getNotification(id);
 	}
-
-	//admin side Payment History - to view all users payment
-	@GetMapping
-	public List<Payment> getAllPayment(){
-		return paymentService.getAllPayment();
-	}
-	
 }

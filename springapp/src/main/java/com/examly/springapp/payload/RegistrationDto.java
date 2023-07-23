@@ -1,43 +1,24 @@
-package com.examly.springapp.model;
+package com.examly.springapp.payload;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.NaturalId;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-
-
-@Getter
 @Setter
-@Entity
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String firstName;
-    private String lastName;
-    @NaturalId(mutable = true)
-    private String email;
-    private String password;
-    private String phoneNumber;
-    private String address;
-    private String role;
-    private boolean isEnabled = false;
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+public class RegistrationDto
+{
+    String firstName;
+    String lastName;
+    String email;
+    String password;
+    String phoneNumber;
+    String address;
+    String role;
 	public String getFirstName() {
 		return firstName;
 	}
@@ -80,15 +61,8 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public boolean isEnabled() {
-		return isEnabled;
-	}
-	public void setEnabled(boolean isEnabled) {
-		this.isEnabled = isEnabled;
-	}
     
-
-
-
-
+    
 }
+
+

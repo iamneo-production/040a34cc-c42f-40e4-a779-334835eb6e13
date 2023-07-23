@@ -149,7 +149,7 @@ public class LoanServiceImpl implements LoanService{
 		String from="virtusaeducationloanportal@gmail.com";
 		String to=user.getEmail();
 		String subject="Education Loan Successfully Completed - Congratulations!";
-		String mailContent="Dear "+user.getUserName()+",\nWe are pleased to inform you "
+		String mailContent="Dear "+user.getEmail()+",\nWe are pleased to inform you "
 				+ "that your education loan has been successfully paid off. Thank you for "
 				+ "your prompt repayments.\n<h3>Loan Details :</h3><h3>Loan Id :"+
 				loan.getLoanId()+"</h3><h3>Principal Amount : "+loan.getLoanAmount()+

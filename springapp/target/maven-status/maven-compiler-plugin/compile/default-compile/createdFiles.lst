@@ -19,16 +19,22 @@ com/examly/springapp/service/PaymentService.class
 com/examly/springapp/controller/LoanApplication2Controller.class
 com/examly/springapp/service/LoanApplicationService.class
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Education-loan-portal-SURIYADANASEKAR
 com/examly/springapp/controller/LoanController.class
 com/examly/springapp/service/LoanApplication3Service.class
 com/examly/springapp/repository/LoanApplication3Repository.class
 com/examly/springapp/controller/LoanApplicationController.class
+<<<<<<< HEAD
 =======
 com/examly/springapp/service/LoanApplication3Service.class
 com/examly/springapp/controller/LoanController.class
 com/examly/springapp/controller/LoanApplicationController.class
 com/examly/springapp/repository/LoanApplication3Repository.class
 >>>>>>> c2a51a0c7a866e5ecd890d68bd803c8d8561f50f
+=======
+>>>>>>> Education-loan-portal-SURIYADANASEKAR
 com/examly/springapp/service/LoanServiceImpl.class
 com/examly/springapp/service/LoanService.class
 com/examly/springapp/service/LoanApplication2Service.class

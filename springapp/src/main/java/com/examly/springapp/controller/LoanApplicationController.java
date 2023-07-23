@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.loanPortalMain.model.LoanApplication;
-import com.project.loanPortalMain.service.LoanApplicationService;
+import com.examly.springapp.model.LoanApplication;
+import com.examly.springapp.service.LoanApplicationService;
 
 @RestController
 public class LoanApplicationController {

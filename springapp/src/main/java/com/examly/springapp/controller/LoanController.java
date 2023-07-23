@@ -43,7 +43,7 @@ public class LoanController {
 
     @PutMapping("/loans/{id}")
 	public ResponseEntity<String> updatePayment(@PathVariable long id,@RequestBody Loan loan){
-		loanService.approveLoan(loan.getUserId(),loan.getLoanId());
+		//loanService.approveLoan(loan.getUserId(),loan.getLoanId());
 		return new ResponseEntity<>("success",HttpStatus.OK);
 	} 
 

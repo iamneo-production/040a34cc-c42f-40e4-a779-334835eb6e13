@@ -68,7 +68,7 @@ public class PaymentServiceImpl implements PaymentService{
 		String from="virtusaeducationloanportal@gmail.com";
 		String to=user.getEmail();
 		String subject="Payment Successfull - Receipt";
-		String mailContent="Dear "+user.getEmail()+",\n\nWe are writing to inform you that "
+		String mailContent="Dear "+user.getEmail()+",\n\n We are writing to inform you that "
 				+ "your recent payment has been successfullly processed. We appreciate"
 				+ " your prompt action in fulfilling your financial obligation."
 				+ "\n\nPayment Details:\n\npayment Date : "+payment.getPaymentDate()+

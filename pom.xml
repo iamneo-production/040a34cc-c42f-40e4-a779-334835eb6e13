@@ -9,28 +9,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <sonar.organization>iamneo-production</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> df8f92debd34be8e0e083cf6333cc8706f18b977
         <sonar.sources></sonar.sources>
         <sonar.tests></sonar.tests>
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
-<<<<<<< HEAD
-=======
-=======
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
-<<<<<<< .merge_file_goeQrf
-=======
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
->>>>>>> Education-loan-portal-karthi-0212
-=======
->>>>>>> .merge_file_P5VAAl
->>>>>>> 67a22e8 ( commit)
->>>>>>> df8f92debd34be8e0e083cf6333cc8706f18b977
         <sonar.java.binaries>target</sonar.java.binaries>
     </properties>
     <dependencies>

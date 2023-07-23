@@ -13,15 +13,15 @@
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/LoanApplication3Controller.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/PaymentRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/PaymentController.java
-/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/Exception/UserNotFoundException.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/LoanApplication2Controller.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/PaymentService.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/UserNotFoundException.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/LoanApplication3Service.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/LoanService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/LoanApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/LoanApplication3Repository.java
-/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/Exception/LoanNotFoundException.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/LoanNotFoundException.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Loan.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Payment.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/LoanServiceImpl.java

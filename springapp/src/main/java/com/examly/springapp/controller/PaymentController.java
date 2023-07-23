@@ -31,7 +31,7 @@ public class PaymentController {
 	
 	@PostMapping("/payments")
 	public ResponseEntity<String> addPayment(@RequestBody Payment payment)  throws MessagingException {
-		paymentService.addPayment(payment);
+		// paymentService.addPayment(payment);
 		return new ResponseEntity<>("true",HttpStatus.OK);
 	}
 	

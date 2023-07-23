@@ -10,17 +10,17 @@
         <sonar.organization>iamneo-production</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 <<<<<<< HEAD
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
+        <sonar.sources>src/springapp/main</sonar.sources>
+        <sonar.tests>src/springapp/test</sonar.tests>
+        <sonar.sources>src/springapp/main</sonar.sources>
+        <sonar.tests>src/springapp/test</sonar.tests>
 =======
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
+        <sonar.sources>src/springapp/main</sonar.sources>
+        <sonar.tests>src/springapp/test</sonar.tests>
 <<<<<<< .merge_file_goeQrf
 =======
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
+        <sonar.sources>src/springapp/main</sonar.sources>
+        <sonar.tests>src/springapp/test</sonar.tests>
 >>>>>>> Education-loan-portal-karthi-0212
 =======
 >>>>>>> .merge_file_P5VAAl

@@ -10,6 +10,7 @@
         <sonar.organization>iamneo-production</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> df8f92debd34be8e0e083cf6333cc8706f18b977
@@ -19,6 +20,12 @@
         <sonar.tests></sonar.tests>
 <<<<<<< HEAD
 =======
+=======
+        <sonar.sources></sonar.sources>
+        <sonar.tests></sonar.tests>
+        <sonar.sources></sonar.sources>
+        <sonar.tests></sonar.tests>
+>>>>>>> Education-loan-portal-karthi-0212
 =======
         <sonar.sources></sonar.sources>
         <sonar.tests></sonar.tests>

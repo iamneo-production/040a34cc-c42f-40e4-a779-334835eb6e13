@@ -56,15 +56,15 @@ public class SecurityConfig {
                                 .antMatchers("/password/**").permitAll()
                                 .antMatchers("/roles").permitAll()
                                 .antMatchers("/currentUser").permitAll()
-                                .antMatchers("/users/**").hasAnyAuthority("USER","ADMIN")
-                                .antMatchers("/admin/**").hasAuthority("ADMIN")
-                                .antMatchers("/loan/**").hasAnyAuthority("ADMIN","USER")
-                                .antMatchers("/loans/**").hasAnyAuthority("ADMIN","USER")
-                                .antMatchers("/payments/**").hasAnyAuthority("ADMIN","USER")
-                                .antMatchers("/notifications/**").hasAnyAuthority("ADMIN","USER")
-                                .antMatchers("/loan-applications/**").hasAnyAuthority("ADMIN","USER")
-                                .antMatchers("/loan-applications2/**").hasAnyAuthority("ADMIN","USER")
-                                .antMatchers("/image/**").hasAnyAuthority("ADMIN","USER")
+                                .antMatchers("/users/**").permitAll()
+                                .antMatchers("/admin/**").permitAll()
+                                .antMatchers("/loan/**").permitAll()
+                                .antMatchers("/loans/**").permitAll()
+                                .antMatchers("/payments/**").permitAll()
+                                .antMatchers("/notifications/**").permitAll()
+                                .antMatchers("/loan-applications/**").permitAll()
+                                .antMatchers("/loan-applications2/**").permitAll()
+                                .antMatchers("/image/**").permitAll()
                                 .anyRequest().authenticated()
 
                 ).exceptionHandling( exception -> exception
@@ -76,6 +76,7 @@ public class SecurityConfig {
         http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+
     }
 
 }

@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -144,7 +145,7 @@ public class LoanServiceImpl implements LoanService{
 
 	@Override
 	public void sendLoanCompletionMail(long id) throws MessagingException {
-		user=userRepository.findByUserId(id);
+	    // user=userRepository.findById(id);
 		loan=loanRepository.findByUserId(id);
 		String from="virtusaeducationloanportal@gmail.com";
 		String to=user.getEmail();

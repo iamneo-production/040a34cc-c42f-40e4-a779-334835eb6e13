@@ -26,10 +26,10 @@ public class LoanApplicationController {
 	
 	// create a new loan application
 	@PostMapping("/loan-applications")
-	public ResponseEntity<LoanApplication>  saveLoanApplication(@RequestBody LoanApplication la)
+	public ResponseEntity<String>  saveLoanApplication(@RequestBody LoanApplication la)
 	{
 		LoanApplication savedLA = LAS.saveLoanApplication(la);
-		return new ResponseEntity<>(savedLA, HttpStatus.OK);
+		return new ResponseEntity<>("true", HttpStatus.OK);
 	}
 	
 	

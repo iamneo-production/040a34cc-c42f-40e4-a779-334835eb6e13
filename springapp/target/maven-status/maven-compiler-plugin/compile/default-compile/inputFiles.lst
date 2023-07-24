@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+C:\Users\nikhi\Desktop\ESeva\springapp\src\main\java\com\example\springapp\Repository\EsevaRepo.java
+C:\Users\nikhi\Desktop\ESeva\springapp\src\main\java\com\example\springapp\Model\Eseva.java
+C:\Users\nikhi\Desktop\ESeva\springapp\src\main\java\com\example\springapp\Controller\ApiController.java
+C:\Users\nikhi\Desktop\ESeva\springapp\src\main\java\com\example\springapp\Service\EsevaService.java
+C:\Users\nikhi\Desktop\ESeva\springapp\src\main\java\com\example\springapp\SpringappApplication.java
+=======
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/PaymentServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/LoanRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/PasswordController.java
@@ -60,3 +67,4 @@
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/LoginController.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Payment.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/LoanServiceImpl.java
+>>>>>>> 02e2ae78feecf345d702aec7081df30e575d7278

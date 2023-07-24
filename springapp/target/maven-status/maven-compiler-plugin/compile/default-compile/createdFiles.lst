@@ -1,9 +1,15 @@
+com/examly/springapp/controller/UserLoanController.class
+com/examly/springapp/model/UserLoans.class
 com/examly/springapp/controller/LoanApplication3Controller.class
+com/examly/springapp/service/UserLoanService.class
 com/examly/springapp/repository/PasswordResetTokenRepository.class
 com/examly/springapp/repository/PaymentRepository.class
 com/examly/springapp/repository/LoanApplicationRepository.class
 com/examly/springapp/model/LoanApplication3.class
+com/examly/springapp/service/impl/NotificationServiceImpl.class
+com/examly/springapp/controller/NotificationController.class
 com/examly/springapp/service/impl/PasswordResetTokenService.class
+com/examly/springapp/service/NotificationService.class
 com/examly/springapp/payload/JWTAuthResponse.class
 com/examly/springapp/repository/LoanRepository.class
 com/examly/springapp/exception/UserNotFoundException.class
@@ -18,6 +24,7 @@ com/examly/springapp/controller/PasswordController.class
 com/examly/springapp/repository/VerificationTokenRepository.class
 com/examly/springapp/payload/PasswordRequestUtil.class
 com/examly/springapp/service/PaymentServiceImpl.class
+com/examly/springapp/repository/NotificationRepository.class
 com/examly/springapp/repository/LoanApplication2Repository.class
 com/examly/springapp/security/CustomUserDetailsService.class
 com/examly/springapp/service/PaymentService.class
@@ -34,6 +41,7 @@ com/examly/springapp/SpringappApplication.class
 com/examly/springapp/exception/ResourceNotFoundException.class
 com/examly/springapp/model/VerificationToken.class
 com/examly/springapp/config/WebAppInitializer.class
+com/examly/springapp/model/Notification.class
 com/examly/springapp/service/impl/AuthServiceImpl.class
 com/examly/springapp/exception/LoanNotFoundException.class
 com/examly/springapp/payload/RegistrationDto.class
@@ -42,6 +50,7 @@ com/examly/springapp/controller/AdminController.class
 com/examly/springapp/payload/LoginDto.class
 com/examly/springapp/model/LoanApplication.class
 com/examly/springapp/security/JwtAuthenticationEntryPoint.class
+com/examly/springapp/repository/UserLoanRepository.class
 com/examly/springapp/model/PasswordResetToken.class
 com/examly/springapp/model/Payment.class
 com/examly/springapp/repository/UserRepository.class
@@ -51,6 +60,7 @@ com/examly/springapp/security/JwtAuthenticationFilter.class
 com/examly/springapp/payload/CurrentUserDTO.class
 com/examly/springapp/security/JwtTokenProvider.class
 com/examly/springapp/controller/LoanController.class
+com/examly/springapp/service/impl/UserLoanServiceImpl.class
 com/examly/springapp/service/LoanApplication3Service.class
 com/examly/springapp/config/SecurityConfig.class
 com/examly/springapp/repository/LoanApplication3Repository.class

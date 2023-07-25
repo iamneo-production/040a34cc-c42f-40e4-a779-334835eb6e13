@@ -2,6 +2,7 @@ package com.examly.springapp.service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -64,11 +65,11 @@ public class PaymentServiceImpl implements PaymentService{
 	@Override
 	public void sendEmail(Payment payment) {
 		
-		user=userRepository.findByUserId(payment.getUserId());
+		// user=userRepository.findById(payment.getUserId());
 		String from="virtusaeducationloanportal@gmail.com";
 		String to=user.getEmail();
 		String subject="Payment Successfull - Receipt";
-		String mailContent="Dear "+user.getUserName()+",\n\nWe are writing to inform you that "
+		String mailContent="Dear "+user.getEmail()+",\n\n We are writing to inform you that "
 				+ "your recent payment has been successfullly processed. We appreciate"
 				+ " your prompt action in fulfilling your financial obligation."
 				+ "\n\nPayment Details:\n\npayment Date : "+payment.getPaymentDate()+

@@ -28,7 +28,7 @@ public class LoanApplicationController {
 	@PostMapping("/loan-applications")
 	public ResponseEntity<LoanApplication>  saveLoanApplication(@RequestBody LoanApplication la)
 	{
-		// LoanApplication savedLA = LAS.saveLoanApplication(la);
+		LoanApplication savedLA = LAS.saveLoanApplication(la);
 		return new ResponseEntity<>(savedLA, HttpStatus.OK);
 	}
 	
@@ -43,10 +43,11 @@ public class LoanApplicationController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-    }	 
 	
+
+    }	
 	
-	
+
 	
 		 
 		 

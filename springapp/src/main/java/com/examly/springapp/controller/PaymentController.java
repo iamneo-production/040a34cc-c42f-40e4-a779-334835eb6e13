@@ -48,8 +48,8 @@ public class PaymentController {
 
 	@PutMapping("/payments/{id}")
 	public ResponseEntity<String> updatePayment(@PathVariable long id,@RequestBody Payment payment){
-		paymentRepository.deleteById(id);
-		paymentRepository.save(payment);
+		// paymentRepository.deleteById(id);
+		// paymentRepository.save(payment);
 		return new ResponseEntity<>("success",HttpStatus.OK);
 	} 
 

@@ -1,23 +1,28 @@
 package com.examly.springapp.repository;
 
-
-import com.examly.springapp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+import com.examly.springapp.model.User;
 
-    Optional<User> findByEmail(String email);
+@Repository
+public interface UserRepository extends JpaRepository<User,Long>{
 
-    Optional<User> findByUsernameOrEmail(String username, String email);
+	Optional<User> findByEmail(String email);
 
     Optional<User> findById(Long id);
-
-    Optional<User> findByUsername(String username);
-
-    Boolean existsByUsername(String username);
-
-    Boolean existsByEmail(String email);
+    
+    default User findByIdDirect(Long id) {
+    	Optional<User> optionalUser=findById(id);
+    	return optionalUser.orElse(null);
+    }
+    
+    @Query("SELECT u FROM User u WHERE u.isEnabled = 1 AND u.role = 'USER'")
+	List<User> findAllByConditions();
+	
 
 }

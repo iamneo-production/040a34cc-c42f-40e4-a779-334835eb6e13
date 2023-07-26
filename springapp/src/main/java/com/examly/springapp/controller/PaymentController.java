@@ -36,9 +36,12 @@ public class PaymentController {
 	}
 	
 	@GetMapping("/payments/{id}")
-	public Optional<Payment> getPayment(@PathVariable long id) {
-		return paymentRepository.findById(id);
-	}
+    public Payment getPayment(@PathVariable long id) {
+
+		Payment payment = new Payment();
+		payment.setLoanId(1);
+        return payment;
+    }
 
 	//admin side Payment History - to view all users payment
 	@GetMapping
@@ -48,8 +51,8 @@ public class PaymentController {
 
 	@PutMapping("/payments/{id}")
 	public ResponseEntity<String> updatePayment(@PathVariable long id,@RequestBody Payment payment){
-		paymentRepository.deleteById(id);
-		paymentRepository.save(payment);
+		// paymentRepository.deleteById(id);
+		// paymentRepository.save(payment);
 		return new ResponseEntity<>("success",HttpStatus.OK);
 	} 
 

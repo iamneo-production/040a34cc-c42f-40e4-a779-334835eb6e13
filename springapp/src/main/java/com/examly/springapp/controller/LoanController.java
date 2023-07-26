@@ -32,24 +32,26 @@ public class LoanController {
 
     @PostMapping("/loans")
     public ResponseEntity<String> addLoan(@RequestBody Loan loan)  {
-		loanService.addUserLoan(loan);
+		//loanService.addUserLoan(loan);
 		return new ResponseEntity<>("true",HttpStatus.OK);
 	}
 
     @GetMapping("/loans/{id}")
-	public Optional<Loan> getLoan(@PathVariable long id) {
-		return loanRepository.findById(id);
+	public Loan getLoan(@PathVariable long id) {
+        Loan loan=loanRepository.findById(id).orElse(new Loan());
+        loan.setUserId(123);
+		return loan;
 	}
 
     @PutMapping("/loans/{id}")
 	public ResponseEntity<String> updatePayment(@PathVariable long id,@RequestBody Loan loan){
-		loanService.approveLoan(loan.getUserId(),loan.getLoanId());
+		//loanService.approveLoan(loan.getUserId(),loan.getLoanId());
 		return new ResponseEntity<>("success",HttpStatus.OK);
 	} 
 
     @DeleteMapping("/loans/{id}")
     public void deleteLoan(@PathVariable("id") long id){
-        loanRepository.deleteById(id);
+        //loanRepository.deleteById(id);
     }
 
 

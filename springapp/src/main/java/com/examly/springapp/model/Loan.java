@@ -39,6 +39,10 @@ public class Loan {
 	private double principalAmount;
 	@Column
 	private double interestAmount;
+    @Column
+    private double interest=0;
+    @Column
+    private String name="Education Loan";
 	@Column
 	private double principalAmountPaid; 
 	@Column
@@ -98,6 +102,23 @@ public class Loan {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+    
+
+    public double getInterest() {
+        return interest;
+    }
+
+    public void setInterest(double interest) {
+        this.interest = interest;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public long getLoanId() {

@@ -1,97 +1,136 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Card from "react-bootstrap/Card";
-import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
+import React, { useEffect, useState } from "react";
+import { Container, Card } from "react-bootstrap";
+import profileImage from "../../images/userimg.jpg";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import profileImage from "../Images/userimg.jpg";
-import Navbar from "./Navbar";
-// const User = {
-//   name: "Priyanshu",
-//   UserId: 1,
-//   Email: "pri@virtusa",
-//   mob: 9876543210,
-// };
-function Profile() {
-  <Navbar />;
-  return (
-    <>
-      <Table>
-        <tr>
-          <th>
-            <DropdownButton id="dropdown-basic-button-1" title="Services">
-              <Dropdown.Item href="#/action-1">Apply for Loan</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Check status</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Contact Us</Dropdown.Item>
-              <Dropdown.Item href="#/action-4">Edit Profile</Dropdown.Item>
-              <Dropdown.Item href="#/action-5">Delete Profile</Dropdown.Item>
-            </DropdownButton>
-          </th>
-        </tr>
-      </Table>
+import "./Profile.css";
+import { request } from "../../auth/Axios";
 
+const UserProfileCard = ({ firstName, lastName, email, phoneNumber, address }) => {
+  return (
+    <div className="container">
       <Container style={{ paddingTop: "30px" }}>
-        <h1 style={{ padding: 10, textAlign: "center" }}>User Profile Page</h1>
-        <br></br>
-        <Row className="justify-content-md-center">
+        <Row>
           <Col className="col-md-4">
-            <Card style={{ position: "centre", width: "18rem" }}>
-              <img
-                src={profileImage}
-                alt="Profile"
-                className="img-fluid rounded-circle"
-                style={{ width: "150px", height: "150px" }}
-              />
+            <Card className="user-profile-card" id="myCard3">
               <Card.Body>
-                <Card.Title style={{ padding: 20, textAlign: "center" }}>
-                  User Details
+                <Card.Title className="text-center mb-4">
+                  User Profile
                 </Card.Title>
+                <img
+                  src={profileImage}
+                  alt="Profile"
+                  className="img-fluid rounded-circle"
+                  style={{ width: "150px", height: "150px" }}
+                />
                 <Card.Text>
-                  <Form.Control
-                    type="text"
-                    placeholder="Name -> "
-                    aria-label="Disabled input example"
-                    disabled
-                    readOnly
-                  />
-                  <br />
-                  <Form.Control
-                    type="text"
-                    placeholder="User ID -> "
-                    aria-label="Disabled input example"
-                    disabled
-                    readOnly
-                  />
-                  <br />
-                  <Form.Control
-                    type="text"
-                    placeholder="Email-Id -> "
-                    aria-label="Disabled input example"
-                    disabled
-                    readOnly
-                  />
-                  <br />
-                  <Form.Control
-                    type="text"
-                    placeholder="Mobile Number -> "
-                    aria-label="Disabled input example"
-                    disabled
-                    readOnly
-                  />
-                  <br />
+                  <div>
+                    <br />
+                    <label>First Name:</label>
+                    <input
+                      type="text"
+                      value={firstName}
+                      readOnly
+                      className="form-control"
+                    />
+                  </div>
+                  <div>
+                    <br />
+                    <label>Last Name:</label>
+                    <input
+                      type="text"
+                      value={lastName}
+                      readOnly
+                      className="form-control"
+                    />
+                  </div>
+                  <div>
+                    <br />
+                    <label>Email:</label>
+                    <input
+                      type="email"
+                      value={email}
+                      readOnly
+                      className="form-control"
+                    />
+                  </div>
+                  <div>
+                    <br />
+                    <label>Phone Number:</label>
+                    <input
+                      type="text"
+                      value={phoneNumber}
+                      readOnly
+                      className="form-control"
+                    />
+                  </div>
+                  <div>
+                    <br />
+                    <label>Address:</label>
+                    <textarea
+                      value={address}
+                      readOnly
+                      className="form-control"
+                    />
+                  </div>
                 </Card.Text>
-                <Button variant="primary">LOGOUT</Button>
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
-}
+};
 
-export default Profile;
+const App = () => {
+  const [userProfile, setUserProfile] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  useEffect(() => {
+    const loginUser = async () => {
+      try {
+        const response = await request('get', '/currentUser');
+        setLoggedInUser(response.data);
+      } catch (error) {
+        console.log("Error fetching current user:", error);
+      }
+    };
+
+    loginUser();
+  }, []);
+
+  useEffect(() => {
+    if (loggedInUser) {
+      window.id=loggedInUser.user.id;
+      fetchUserProfileData(loggedInUser.user.id) 
+        .then((data) => {
+          setUserProfile(data);
+        })
+        .catch((error) => {
+          console.log("Error fetching user profile:", error);
+        });
+    }
+  }, [loggedInUser]);
+  
+
+  const fetchUserProfileData = (id) => {
+    return request('get', `/users/${id}`)
+      .then((response) => response.data)
+      .catch((error) => {
+        throw new Error("Failed to fetch user profile");
+      });
+  };      
+  
+  return (
+    <div className="App">
+      {userProfile ? (
+        <UserProfileCard {...userProfile} />
+      ) : (
+        <p>Loading user profile...</p>
+      )}
+    </div>
+  );
+};
+
+export default App;

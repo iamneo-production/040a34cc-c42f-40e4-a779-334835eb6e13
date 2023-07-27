@@ -1,13 +1,12 @@
-img{
+.login-image{
     /* margin:84px 0 80px 0px; */
     /* width: 550px;
     height: 669px; */
     border-radius: 20px 0 0 20px;
     box-shadow: 40px;
-    position: relative;
 }
 
-.img1{
+.login-image{
     box-shadow: 0 6px 5px #888888;
 }
 
@@ -17,7 +16,7 @@ img{
 }
 
 
-input{
+.login-input{
     vertical-align: middle;
     margin: 10px 10px 5px 0;
     padding: 10px;
@@ -27,7 +26,7 @@ input{
     border-radius: 5px;
 }
 
-label{
+.login-label{
     margin: 10px 10px 5px 0;
     /* width: 180px; */
     display: inline-block;
@@ -46,16 +45,17 @@ label{
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 29px;
+    line-height: 20px;
 
 
     color: #473C3C;
 
      
 }
-button{
+.login-button{
     padding: 10px 20px;
     margin: 15px;
+    margin-top: 10px;
     background-color: #BDEAED;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -66,10 +66,11 @@ button{
 
 .br{
     display: flex;
+    margin-top: 20px;
 }
 
 hr{
-    width: 30%;
+    width: 40%;
     height: 0;
 }
 
@@ -94,7 +95,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.container {
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,6 +104,7 @@ body {
 }
 
 .content {
+    box-shadow: 0 6px 5px #888888;
     width: 70%;
     background-color: #DCF5F1;
     border-radius: 10px;
@@ -111,7 +113,7 @@ body {
     height: 420px;
 }
 
-.formContent {
+.login-formContent {
     min-width: 40%;
     padding: 20px;
 }
@@ -125,12 +127,16 @@ body {
     text-align: center;
 }
 
-.content .image img {
+.content .image .login-image {
     width: 100%;
     max-width: 100%;
     height: auto;
 }
-
+.login-error{
+    font-size: 10px;
+    margin-left: 100px;
+    color: red;
+}
 .content .login {
     font-weight: bold;
     text-align: center;

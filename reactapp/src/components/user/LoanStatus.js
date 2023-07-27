@@ -2,75 +2,42 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import { Button } from "react-bootstrap";
-import Navbar from "./Navbar";
-const Loanstatus = () => {
-  const LoanStatus = [
-    {
-      name: "Abc",
-      loanId: 1,
-      status: "Approved",
-    },
-    {
-      name: "Abc",
-      loanId: 1,
-      status: "Approved",
-    },
-    {
-      name: "Abc",
-      loanId: 1,
-      status: "Approved",
-    },
-    {
-      name: "Abc",
-      loanId: 1,
-      status: "Approved",
-    },
-    {
-      name: "Abc",
-      loanId: 1,
-      status: "Approved",
-    },
-    {
-      name: "Abc",
-      loanId: 1,
-      status: "Approved",
-    },
-    {
-      name: "Abc",
-      loanId: 1,
-      status: "Approved",
-    },
-  ];
+const Loanstatus = ({status}) => {
 
-  <>
-    <Navbar />
-  </>;
   return (
-    <Container style={{ paddingTop: "30px" }}>
-      <h3 style={{ color: "black", padding: 20, textAlign: "center" }}>
+    <Container style={{ paddingLeft: "10px", paddingTop: "30px" }}>
+      <div style={{color:"#000080",fontSize:"24px",textAlign:"center",marginTop:"30px",marginBottom:"10px"}}>
         LOAN STATUS
-      </h3>
+      </div>
       <br></br>
       <br></br>
-      <Table variant="dark" style={{ border: "1px solid " }}>
+      <Table
+        style={{
+          width: "90%",
+          height: "100px",
+          boxShadow: "2px 4px 10px 1px rgba(201,201,201,0.47)",
+          justifyContent: "center",
+          marginBottom:"30px",
+        }}
+      >
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Loan Id</th>
+            <th>S.NO</th>
+            <th>Apply Date</th>
             <th>Status</th>
-            <th>View Report</th>
+            {/* <th>View Report</th> */}
           </tr>
         </thead>
         <tbody>
-          {LoanStatus.map((item, index) => {
+          {status.map((item, index) => {
             return (
               <tr>
-                <td>{item.name}</td>
-                <td>{index}</td>
+                <td>{index+1}</td>
+                <td>{item.applyDate}</td>
                 <td>{item.status}</td>
-                <td>
+                {/* <td>
                   <Button variant="success">View Report</Button>
-                </td>
+                </td> */}
               </tr>
             );
           })}

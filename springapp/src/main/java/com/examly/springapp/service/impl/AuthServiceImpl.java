@@ -23,7 +23,9 @@ public class AuthServiceImpl implements AuthService {
     private PasswordEncoder passwordEncoder;
     private JwtTokenProvider jwtTokenProvider;
 
-
+    public AuthServiceImpl(){
+        
+    }
     public AuthServiceImpl(AuthenticationManager authenticationManager,
                            UserRepository userRepository,
 

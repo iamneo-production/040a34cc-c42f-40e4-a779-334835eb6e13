@@ -31,6 +31,8 @@ public class RegistrationCompleteEventListener implements ApplicationListener<Re
 	@Autowired
     private HttpServletRequest request;
     private  User theUser;
+
+    
     @Override
     public void onApplicationEvent(RegistrationCompleteEvent event) {
 

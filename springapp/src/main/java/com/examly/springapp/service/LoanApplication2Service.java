@@ -17,7 +17,7 @@ public class LoanApplication2Service {
 	
 	
 	// Logic
-	
+	// osuds
 	
 	// USER SIDE
 		

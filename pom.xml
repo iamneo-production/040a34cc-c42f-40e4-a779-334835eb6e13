@@ -10,11 +10,11 @@
         <sonar.organization>iamneo-production</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 <<<<<<< HEAD
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
+        <sonar.sources>null</sonar.sources>
+        <sonar.tests>null</sonar.tests>
 =======
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
+        <sonar.sources>null</sonar.sources>
+        <sonar.tests>null</sonar.tests>
 >>>>>>> 0491ea825adb0873beb170501c9f5d2ded648bc1
         <sonar.java.binaries>target</sonar.java.binaries>
     </properties>

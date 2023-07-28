@@ -1,34 +1,43 @@
 import React from 'react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
-export default function UserChart(props) {
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+export default function UserChart({userDetail}) {
+  const COLORS = ["#0088FE", "#FF8042",  "green"];
+  const data = [
+    { name: "Principal", value: parseInt(userDetail.principalAmount-userDetail.principalAmountPaid) },
+    { name: "Interest", value: parseInt(userDetail.interestAmount-userDetail.interestAmountPaid) },
+    { name: "Total Amount Paid", value: parseInt(userDetail.totalAmountRepaid) },
+  ];
   return (
     <>
     <div className='chart'>
     <div className='chart-title'>
-            Last 6 Months (Transactions)
+            Loan Details
         </div>
+        <span style={{width:"10px",height:"10px",backgroundColor:"#0088FE",fontSize:"10px"}}>
+          &nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span style={{fontSize:"12px"}}>&nbsp; Principal Amount</span><br/>
+        <span style={{width:"10px",height:"10px",backgroundColor:"#FF8042",fontSize:"10px"}}>
+        &nbsp;&nbsp;&nbsp;&nbsp;</span ><span style={{fontSize:"12px"}}>&nbsp; Interest Amount</span><br/>
+        <span style={{width:"10px",height:"10px",backgroundColor:"green",fontSize:"10px"}}>
+        &nbsp;&nbsp;&nbsp;&nbsp;</span><span style={{fontSize:"12px"}}>&nbsp; Amount Paid</span>
         <ResponsiveContainer width="100%" aspect={3/2}>
-        <BarChart
-          width={500}
-          height={400}
-          data={props.data}
-          margin={{
-            top: 20,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" className='chart-grid'/>
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="interest" stackId="a" fill="#8884d8" />
-          <Bar dataKey="principal" stackId="a" fill="#82ca9d" />
-        </BarChart>
-      </ResponsiveContainer>
+            <PieChart>
+            <Pie
+                data={data}
+                dataKey="value"
+                outerRadius={120}
+                fill="#8884d8"
+                label
+              >
+                {data.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={COLORS[index % COLORS.length]}
+                  />
+                ))}
+              </Pie>
+            </PieChart>
+          </ResponsiveContainer>
     </div>
     </>
   )

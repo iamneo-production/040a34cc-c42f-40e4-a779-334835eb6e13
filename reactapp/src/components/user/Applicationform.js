@@ -1,9 +1,11 @@
 import React from "react";
+import { format } from "date-fns";
 import DatePicker from "react-datepicker";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Styling.css";
+import { useNavigate } from "react-router-dom";
 
 function Applicationform() {
   const {
@@ -11,18 +13,37 @@ function Applicationform() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [selectedDate, setSelectedDate] = useState(null);
+
+  const navigate = useNavigate();
   const [dateOfBirth, setDateOfBirth] = useState(null);
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-  const handleDateOfBirthChange = (date) => {
-    setDateOfBirth(date);
+  const onSubmit = (datas) => {
+    const formattedDateOfBirth = format(dateOfBirth, "dd/MM/yyyy"); // Format the dateOfBirth value
+    datas.dateOfBirth = formattedDateOfBirth; // Update the dateOfBirth value in the datas object
+   
+    console.log(datas);
+    
+    fetch("http://localhost:5050/loan-applications/50", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(datas),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        const { userId, id } = data; // Extract id and userId from the response data
+        const navigateEndpoint = `/loan-applications2/${userId}/${id}`;
+        navigate(navigateEndpoint);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
+  const handleDateOfBirthChange = (date) => {
+    setDateOfBirth(date);
   };
 
   return (
@@ -43,7 +64,7 @@ function Applicationform() {
                       type="text"
                       className="form-control"
                       {...register("name", {
-                        required: "Firstname is Required",
+                        required: "Firstname is required",
                       })}
                     />
 
@@ -54,21 +75,12 @@ function Applicationform() {
                 </div>
                 <div className="col-md-6">
                   <div className="md-3">
-                    <label className="form-lable">
-                      MiddleName<span className="text-danger">*</span>
-                    </label>
+                    <label className="form-lable">MiddleName</label>
                     <input
                       type="text"
+                      {...register("middleName")}
                       className="form-control"
-                      {...register("middlename", {
-                        required: "MiddleName is Requitred",
-                      })}
                     />
-                    {errors.middlename && (
-                      <small className="text-danger">
-                        {errors.middlename.message}
-                      </small>
-                    )}
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -80,16 +92,97 @@ function Applicationform() {
                       type="text"
                       className="form-control"
                       {...register("lastname", {
-                        required: "Lastname is Requitred",
+                        required: "Lastname is requitred",
                       })}
                     />
                     {errors.lastname && (
-                      <small className="text-danger">
+                      <span className="text-danger">
                         {errors.lastname.message}
-                      </small>
+                      </span>
                     )}
                   </div>
                 </div>
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      Date of Birth<span className="text-danger">*</span>
+                    </label>
+                    <br />
+                    <DatePicker
+                      selected={dateOfBirth}
+                      onChange={handleDateOfBirthChange}
+                      dateFormat="dd/MM/yyyy"
+                      className="form-control"
+                    >
+                      <input
+                        type="text"
+                        className="form-control"
+                        {...register("dateOfBirth", {
+                          required: "Date of Birth is required",
+                        })}
+                      />
+                    </DatePicker>
+                    {errors.dateOfBirth && (
+                      <span className="text-danger">
+                        {errors.dateOfBirth.message}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      Age<span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("age", {
+                        required: "Age is required",
+                        min: {
+                          value: 18,
+                          message: "Minimum Required age is 18",
+                        },
+                        max: {
+                          value: 35,
+                          message: "Maximum Required age is 18",
+                        },
+                        pattern: {
+                          value: /^[0-9]*$/,
+                          message: "Only numbers are allowed",
+                        },
+                      })}
+                    />
+                    {errors.age && (
+                      <span className="text-danger">{errors.age.message}</span>
+                    )}
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      Gender<span className="text-danger">*</span>
+                    </label>
+                    <select
+                      name="gender"
+                      {...register("gender", {
+                        required: "Gender is required",
+                      })}
+                      className="form-control"
+                    >
+                      <option value="">--Please Select--</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    {errors.gender && (
+                      <span className="text-danger">
+                        {errors.gender.message}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
                 <div className="col-md-6">
                   <div className="md-3">
                     <label className="form-lable">
@@ -99,13 +192,13 @@ function Applicationform() {
                       type="text"
                       className="form-control"
                       {...register("fathername", {
-                        required: "Father Name is Requitred",
+                        required: "Father Name is requitred",
                       })}
                     />
                     {errors.fathername && (
-                      <small className="text-danger">
+                      <span className="text-danger">
                         {errors.fathername.message}
-                      </small>
+                      </span>
                     )}
                   </div>
                 </div>
@@ -188,7 +281,7 @@ function Applicationform() {
                       type="text"
                       className="form-control"
                       {...register("email", {
-                        required: "Email is Required",
+                        required: "Email is required",
                         //pattern: /^[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i
                         pattern: {
                           value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -212,7 +305,7 @@ function Applicationform() {
                       type="number"
                       className="form-control"
                       {...register("contactnumber", {
-                        required: "Required Contact Number",
+                        required: " Contact Number is required",
                         pattern: {
                           value:
                             /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
@@ -292,67 +385,18 @@ function Applicationform() {
                     )}
                   </div>
                 </div>
-                
-                <div className="col-md-6">
-                  <div className="md-3">
-                    <label className="form-lable">
-                      Date of Birth<span className="text-danger">*</span>
-                    </label>
-                    <br />
-                    <DatePicker
-                      selected={dateOfBirth}
-                      onChange={handleDateOfBirthChange}
-                      dateFormat="dd/MM/yyyy"
-                      className="form-control"
-                    >
-                      <input
-                        type="text"
-                        className="form-control"
-                        {...register("dob", {
-                          required: "Date of Birth is required",
-                        })}
-                      />
-                    </DatePicker>
-                    {errors.dob && (
-                      <span className="text-danger">{errors.dob.message}</span>
-                    )}
-                  </div>
-                </div>
+
                 <div className="col-md-6">
                   <div className="md-3">
                     <label className="form-lable">Address 2</label>
-                    <textarea name="address2" className="form-control" />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="md-3">
-                    <label className="form-lable">
-                      Age<span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
+                    <textarea
+                      name="address2"
+                      {...register("address2")}
                       className="form-control"
-                      {...register("age", {
-                        required: "Age is Required",
-                        min: {
-                          value: 18,
-                          message: "Minimum Required age is 18",
-                        },
-                        max: {
-                          value: 35,
-                          message: "Maximum Required age is 18",
-                        },
-                        pattern: {
-                          value: /^[0-9]*$/,
-                          message: "Only numbers are allowed",
-                        },
-                      })}
                     />
-                    {errors.age && (
-                      <span className="text-danger">{errors.age.message}</span>
-                    )}
                   </div>
                 </div>
+
                 <div className="col-md-6">
                   <div className="md-3">
                     <label className="form-lable">
@@ -366,8 +410,8 @@ function Applicationform() {
                       className="form-control"
                     >
                       <option value="">--Please Select--</option>
-                      <option value="Married">Male</option>
-                      <option value="Unmarried">Female</option>
+                      <option value="Married">Married</option>
+                      <option value="Unmarried">Unmarried</option>
                     </select>
                     {errors.maritalstatus && (
                       <span className="text-danger">
@@ -417,36 +461,12 @@ function Applicationform() {
                 <div className="col-md-6">
                   <div className="md-3">
                     <label className="form-lable">
-                      Gender<span className="text-danger">*</span>
-                    </label>
-                    <select
-                      name="gender"
-                      {...register("gender", {
-                        required: "Gender is required",
-                      })}
-                      className="form-control"
-                    >
-                      <option value="">--Please Select--</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    {errors.gender && (
-                      <span className="text-danger">
-                        {errors.gender.message}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="md-3">
-                    <label className="form-lable">
                       Pincode<span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
                       {...register("pincode", {
-                        required: "Pincode is Required",
+                        required: "Pincode is required",
                         pattern: {
                           value: /^\d{6}$/,
                           message: "Invalid pincode",
@@ -458,137 +478,6 @@ function Applicationform() {
                       <span className="text-danger">
                         {errors.pincode.message}
                       </span>
-                    )}
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="md-3">
-                    <label className="form-lable">
-                      Loan Amount <span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("amount", {
-                        required: "Amount is Required",
-                      })}
-                    />
-                    {errors.amount && (
-                      <span className="text-danger">
-                        {errors.amount.message}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="col-md-6">
-                  <div className="md-3">
-                    <label className="form-lable">
-                      Interest Amount (%)<span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      {...register("amount", {
-                        required: "Amount is required",
-                      })}
-                      className="form-control"
-                    />
-                    {errors.amount && (
-                      <span className="text-danger">
-                        {errors.amount.message}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="md-3">
-                    <label className="form-lable">
-                      Loan Type<span className="text-danger">*</span>
-                    </label>
-                    <select
-                      name="loanType"
-                      {...register("loanType", {
-                        required: "Loan Type is required",
-                      })}
-                      className="form-control"
-                    >
-                      <option value="">--Please Select--</option>
-                      <option value="Personal Loan">Semester Fee</option>
-                      <option value="Home Loan">Annual Fee</option>
-                    </select>
-                    {errors.loanType && (
-                      <span className="text-danger">
-                        {errors.loanType.message}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="md-3">
-                    <label className="form-lable">
-                      Loan Repayment Frequency
-                      <span className="text-danger">*</span>
-                    </label>
-                    <select
-                      name="repaymentFrequency"
-                      {...register("repaymentFrequency", {
-                        required: "Repayment Frequency is required",
-                      })}
-                      className="form-control"
-                    >
-                      <option value="">--Please Select--</option>
-                      <option value="Monthly">Monthly</option>
-                    </select>
-                    {errors.repaymentFrequency && (
-                      <span className="text-danger">
-                        {errors.repaymentFrequency.message}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="md-3">
-                    <label className="form-lable">
-                      Tenure in Years<span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("termsInYears", {
-                        required: "Tenure in Years is required",
-                        
-                      })}
-                    />
-                    {errors.termsInYears && (
-                      <span className="text-danger">
-                        {errors.termsInYears.message}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="col-md-6">
-                  <div className="md-3">
-                    <label className="form-lable">
-                      Date of Application<span className="text-danger">*</span>
-                    </label>
-                    <br />
-                    <DatePicker
-                      selected={selectedDate}
-                      onChange={handleDateChange}
-                      dateFormat="dd/MM/yyyy"
-                      className="form-control"
-                    >
-                      <input
-                        type="text"
-                        className="form-control"
-                        {...register("doa", {
-                          required: "Date of Application is required",
-                        })}
-                      />
-                    </DatePicker>
-                    {errors.doa && (
-                      <span className="text-danger">{errors.doa.message}</span>
                     )}
                   </div>
                 </div>
@@ -634,6 +523,25 @@ function Applicationform() {
                     )}
                   </div>
                 </div>
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      IFSC Code<span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("ifscCode", {
+                        required: "IFSC Code is required",
+                      })}
+                    />
+                    {errors.ifscCode && (
+                      <span className="text-danger">
+                        {errors.ifscCode.message}
+                      </span>
+                    )}
+                  </div>
+                </div>
 
                 <div className="col-md-6">
                   <div className="md-3">
@@ -674,6 +582,25 @@ function Applicationform() {
                     {errors.accountType && (
                       <span className="text-danger">
                         {errors.accountType.message}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="md-3">
+                    <label className="form-lable">
+                      Account Number<span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("accountNumber", {
+                        required: "Account Number is required",
+                      })}
+                    />
+                    {errors.accountNumber && (
+                      <span className="text-danger">
+                        {errors.accountNumber.message}
                       </span>
                     )}
                   </div>

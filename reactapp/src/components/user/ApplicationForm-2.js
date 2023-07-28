@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "./ApplicationForm-2.css";
+import "./ApplicationForm2.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { request } from "../../auth/Axios";
 
-const ApplicationForm = () => {
+const ApplicationFormContinue = () => {
   const [tenthSchoolName, setTenthSchoolName] = useState("");
   const [tenthPercentage, setTenthPercentage] = useState("");
   const [twelvethSchoolName, setTwelvethSchoolName] = useState("");
@@ -26,14 +27,15 @@ const ApplicationForm = () => {
 
   const navigate = useNavigate();
 
-  var { userId, loanId } = useParams();
+  var { userId, loanApplicationId, loanId } = useParams();
 
   var form2;
 
   const ui = parseInt(userId);
-  const i = parseInt(loanId);
+  const i = parseInt(loanApplicationId);
+  const loanId2=parseInt(loanId);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
 
     const formattedStartDate = new Date(dateOfCommencement).toLocaleDateString(
@@ -110,34 +112,29 @@ const ApplicationForm = () => {
     } else {
       alert("Please fill all the details");
     }
+    window.loanAmount=totalLoanAmount;
+    window.loanTenure=tenure;
+    window.educationPeriod=courseDuration;
 
-    fetch(`http://localhost:5050/loan-applications2/${ui}/${i}`, {
-      method: "POST", // or 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form2),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-        const { userId } = data; // Extract id and userId from the response data
-        const { id } = data.loanApplication;
+    try {
+      const response = await request('post', `/loan-applications2/${ui}/${i}`, form2);
+      const { userId } = response.data; // Extract id and userId from the response data
+        const { id } = response.data.id2;
         const userId1 = parseInt(userId); // Convert userId to a number
-        const loanId2 = parseInt(id);
-        const navigateEndpoint = `/image/upload/${userId1}/${loanId2}`;
+        const navigateEndpoint = `/user/image/upload/${userId1}/${i}/${loanId2}`;
         navigate(navigateEndpoint);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    } catch (error) {
+      console.log(error); 
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <label className="headings">
-        <h2>Previous Education</h2>
-      </label>
+    <div className="user-container">
+      <div className="user-dashboard-container">
+        <form onSubmit={handleSubmit} className="form">
+        <label className="headings">
+          <h2>Previous Education</h2>
+        </label>
 
       <label className="label">
         <p className="a"> 10th School Name:</p>
@@ -199,7 +196,7 @@ const ApplicationForm = () => {
         />
       </label>
       <label className="headings">
-        <h2>Course Details</h2>
+        <h2>course Details</h2>
       </label>
       <label className="label">
         <p className="a"> University/College Name:</p>
@@ -343,7 +340,9 @@ const ApplicationForm = () => {
 
       <input type="submit" value="Next" className="inputSubmit" />
     </form>
+    </div>
+  </div>
   );
 };
 
-export default ApplicationForm;
+export default ApplicationFormContinue;

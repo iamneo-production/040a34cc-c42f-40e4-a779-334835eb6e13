@@ -30,6 +30,7 @@ public class NotificationController {
 		notificationService.addNotification(notification);
 		return new ResponseEntity<>("Notification added Successfully",HttpStatus.OK);
 	}
+	//test
 	
 	@GetMapping("/{id}")
 	public List<Notification> getNotification(@PathVariable long id) {

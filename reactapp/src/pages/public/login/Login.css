@@ -1,0 +1,189 @@
+.login-image{
+    /* margin:84px 0 80px 0px; */
+    /* width: 550px;
+    height: 669px; */
+    border-radius: 20px 0 0 20px;
+    box-shadow: 40px;
+}
+
+.login-image{
+    box-shadow: 0 6px 5px #888888;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.login-input{
+    vertical-align: middle;
+    margin: 10px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.login-label{
+    margin: 10px 10px 5px 0;
+    /* width: 180px; */
+    display: inline-block;
+    text-align: start;
+}
+
+.passwordreset{
+    
+    position: absolute;
+    /* width: 143px;
+    height: 29px;
+    left: 1056px;
+    top: 450px; */
+
+    font-family: 'Hind';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+
+
+    color: #473C3C;
+
+     
+}
+.login-button{
+    padding: 10px 20px;
+    margin: 15px;
+    margin-top: 10px;
+    background-color: #BDEAED;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.br{
+    display: flex;
+    margin-top: 20px;
+}
+
+hr{
+    width: 40%;
+    height: 0;
+}
+
+.fr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+ @media (min-width: 100px) and (max-width:700px) {
+    .main {
+      display: flex;
+      flex-direction: column;
+    }
+} 
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #BDEAED; */
+}
+
+.content {
+    box-shadow: 0 6px 5px #888888;
+    width: 70%;
+    background-color: #DCF5F1;
+    border-radius: 10px;
+    /* padding: 20px; */
+    flex-flow: row;
+    height: 420px;
+}
+
+.login-formContent {
+    min-width: 40%;
+    padding: 20px;
+}
+
+.formLabel{
+    display: flex;
+    align-items: center;
+}
+
+.content .image {
+    text-align: center;
+}
+
+.content .image .login-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.login-error{
+    font-size: 10px;
+    margin-left: 100px;
+    color: red;
+}
+.content .login {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content form {
+    margin-top: 20px;
+}
+
+.content form input[type="email"],
+.content form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.content form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.content .forgot-password {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.content .line {
+    position: relative;
+    margin: 20px 0;
+}
+
+.content .line::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #000;
+}
+
+.content .signup {
+    text-align: center;
+    margin-top: 10px;
+    color: #098981;
+}

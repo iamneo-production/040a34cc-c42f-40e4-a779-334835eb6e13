@@ -1,11 +1,10 @@
 {
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.sourcePaths": [
 <<<<<<< HEAD
-    "java.configuration.updateBuildConfiguration": "automatic"
+        "junit/test/java",
 =======
-<<<<<<< HEAD
-    "java.dependency.packagePresentation": "flat",
-=======
->>>>>>> 38aab74d5063e0b5916fd5597443f87efe6a357c
-    "java.configuration.updateBuildConfiguration": "interactive"
->>>>>>> Project-Workspace-SURIYADANASEKAR
+>>>>>>> Education-loan-portal-SURIYADANASEKAR
+        "springapp/src/main/java/com/examly/springapp"
+    ]
 }

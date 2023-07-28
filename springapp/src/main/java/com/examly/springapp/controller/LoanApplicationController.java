@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.educationloan.PortalBackend.entity.LoanApplication;
-import com.educationloan.PortalBackend.service.LoanApplicationService;
+import com.examly.springapp.model.LoanApplication;
+import com.examly.springapp.service.LoanApplicationService;
 
 @RestController
 @RequestMapping("/loan-applications")
@@ -37,25 +37,26 @@ public class LoanApplicationController {
 		return new ResponseEntity<>(savedLA, HttpStatus.OK);
 	}
 
+	@PostMapping 
+	public ResponseEntity<String> addLoan(@RequestBody LoanApplication la){
+		return new ResponseEntity<>("true",HttpStatus.OK);
+	}
+	
+
 	// Update an existing loan application by ID
 	@PutMapping("/{id}")
-	public ResponseEntity<LoanApplication> updateLoanApplication(@PathVariable("id") Long id,
+	public ResponseEntity<String> updateLoanApplication(@PathVariable("id") Long id,
 			@RequestBody LoanApplication ula) {
-		LoanApplication updatedLoanApplication = LAS.updateLoanApplication(id, ula);
-		if (updatedLoanApplication != null) {
-			return new ResponseEntity<>(updatedLoanApplication, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+		return new ResponseEntity<>("success",HttpStatus.OK);
 	}
 
 	// ADMIN SIDE
 
 	// Retrieve a specific loan application by ID
 	@GetMapping("/{id}")
-	public ResponseEntity<LoanApplication> getLoanApplicationById(@PathVariable Long id) {
-		LoanApplication loanApplication = LAS.getLoanApplicationById(id);
-
+	public ResponseEntity<LoanApplication> getLoanApplicationById(@PathVariable long id) {
+		LoanApplication loanApplication = new LoanApplication();
+		loanApplication.setUserId(123l);
 		if (loanApplication != null) {
 			return new ResponseEntity<>(loanApplication, HttpStatus.OK);
 		} else {

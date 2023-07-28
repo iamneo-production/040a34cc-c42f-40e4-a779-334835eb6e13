@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.educationloan.PortalBackend.entity.LoanApplication;
+import com.examly.springapp.model.LoanApplication;
 
 @Repository
 public interface LoanApplicationRepository extends JpaRepository<LoanApplication, Long> {

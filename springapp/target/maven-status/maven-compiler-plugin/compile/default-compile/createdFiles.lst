@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 com/examly/springapp/controller/UserLoanController.class
 com/examly/springapp/model/UserLoans.class
 com/examly/springapp/controller/LoanApplication3Controller.class
@@ -80,3 +82,4 @@ com/examly/springapp/service/LoanServiceImpl.class
 com/examly/springapp/service/AuthService.class
 com/examly/springapp/service/LoanService.class
 com/examly/springapp/service/LoanApplication2Service.class
+>>>>>>> 0ae9eb307f86614611ac66659d5543de2347eccf

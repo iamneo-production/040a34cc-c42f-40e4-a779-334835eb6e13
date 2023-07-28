@@ -6,25 +6,35 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
 <<<<<<< HEAD
+			<id>1688378334011</id>
+=======
 <<<<<<< HEAD
-			<id>1682923717692</id>
+			<id>1682925513272</id>
 =======
-			<id>1682935895152</id>
->>>>>>> Project-Workspace-karthi-0212
+<<<<<<< HEAD
+			<id>1688565586309</id>
 =======
-			<id>1686899800871</id>
->>>>>>> d37b2946aa68aea09c8877579d70fa58bed6df27
+			<id>1688546023255</id>
+>>>>>>> 1128c4847bd4611f56d2ad02fe0bfb91c6f45eda
+>>>>>>> 0d4d68d490657c47db01413a5da954c8edfddc84
+>>>>>>> bbd93b65526e5db5cfa1249b81c1b18627f788bc
 			<name></name>
 			<type>30</type>
 			<matcher>

@@ -8,59 +8,53 @@ const Paymenthis = () => {
       paymentid: "101",
       date: "11/02/22",
       amount: 1000,
-      status: "Approved",
+      status: "Paid",
     },
     {
       paymentid: "102",
       date: "11/03/22",
       amount: 1000,
-      status: "Approved",
+      status: "Paid",
     },
     {
       paymentid: "103",
       date: "11/04/22",
       amount: 1000,
-      status: "Approved",
+      status: "Paid",
     },
     {
       paymentid: "104",
       date: "11/05/22",
       amount: 1000,
-      status: "Approved",
+      status: "Paid",
     },
     {
       paymentid: "105",
       date: "11/06/22",
       amount: 1000,
-      status: "Approved",
+      status: "Paid",
     },
     {
       paymentid: "106",
       date: "11/07/22",
       amount: 1000,
-      status: "Approved",
+      status: "Paid",
     },
     {
       paymentid: "107",
       date: "11/08/22",
       amount: 1000,
-      status: "Approved",
+      status: "Pending",
     },
   ];
   return (
-    <Container style={{ paddingTop: "30px" }}>
+    <Container style={{ paddingLeft: "10px", paddingTop: "30px" }}>
       <h1 style={{ color: "black", padding: 20, textAlign: "center" }}>
         Payment History
       </h1>
       <br></br>
       <br></br>
-      {/* Sample Name and Id */}
-      <p>
-        Name - Priyanshu Roy <br></br>
-        User Id - 102
-        <br></br>
-      </p>
-      <br></br>
+      
       <Table variant="dark" style={{ border: "1px solid " }}>
         <thead>
           <tr>

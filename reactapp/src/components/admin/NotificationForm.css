@@ -1,0 +1,61 @@
+.notification-form-container{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+.notification-form-content{
+    padding: 20px;
+    align-items: center;
+    background-color: white;
+    width: 40%;
+    height: max-content;
+    border-radius: 5px;
+}
+.notification-close{
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-left: 480px;
+    display: flex;
+}
+.notification-subject{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 70%;
+    height: 40px;
+    font-size: 16px;
+}
+.notification-message{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 70%;
+    font-size: 16px;
+}
+.notification-title{
+    margin-left: 10px;
+    color: #000080;
+    font-size: 24px;
+    font-weight: bold;
+}
+.notification-send-button{
+    max-width: fit-content;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #000080;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.notification-send-button:hover{
+    background-color: #4444f0;
+}

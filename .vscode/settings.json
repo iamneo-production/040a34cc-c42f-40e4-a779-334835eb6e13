@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "java.configuration.updateBuildConfiguration": "automatic"
 =======
 <<<<<<< HEAD
@@ -8,4 +9,14 @@
 >>>>>>> 38aab74d5063e0b5916fd5597443f87efe6a357c
     "java.configuration.updateBuildConfiguration": "interactive"
 >>>>>>> Project-Workspace-SURIYADANASEKAR
+=======
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.sourcePaths": [
+<<<<<<< HEAD
+        "junit/test/java",
+=======
+>>>>>>> Education-loan-portal-SURIYADANASEKAR
+        "springapp/src/main/java/com/examly/springapp"
+    ]
+>>>>>>> origin/main
 }

@@ -7,7 +7,7 @@
     border-radius: 10px;
     height: 130px;
 }
-.left, .right{
+.widget-left, .widget-right{
     display: flex;
     flex-direction: column;
     justify-content: space-between;

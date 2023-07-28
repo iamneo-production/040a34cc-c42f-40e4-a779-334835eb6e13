@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './List.css';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -8,59 +8,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-export default function List() {
-    const rows=[
-        {
-            id: 1,
-            name: "John",
-            loanName:"Education loan",
-            amount: 2500,
-            method: "Net Bank",
-            transactionId: "adljkfj19283maxnbc",
-            date: "20-06-2023",
-            time: "12:35:26", 
-        },
-        {
-            id: 2,
-            name: "Steve",
-            loanName:"Education loan",
-            amount: 2500,
-            method: "Net Bank",
-            transactionId: "adljkfj19283maxnbc",
-            date: "20-06-2023",
-            time: "12:35:26", 
-        },
-        {
-            id: 3,
-            name: "Warner",
-            loanName:"Education loan",
-            amount: 2500,
-            method: "Net Bank",
-            transactionId: "adljkfj19283maxnbc",
-            date: "20-06-2023",
-            time: "12:35:26", 
-        },
-        {
-            id: 4,
-            name: "Stark",
-            loanName:"Education loan",
-            amount: 2500,
-            method: "Net Bank",
-            transactionId: "adljkfj19283maxnbc",
-            date: "20-06-2023",
-            time: "12:35:26", 
-        },
-        {
-            id: 5,
-            name: "Finch",
-            loanName:"Education loan",
-            amount: 2500,
-            method: "Net Bank",
-            transactionId: "adljkfj19283maxnbc",
-            date: "20-06-2023",
-            time: "12:35:26", 
-        },
-    ];
+export default function List({transactions}) {
+  useEffect(()=>{
+    console.log(transactions);
+  },[]);
+    
   return (
     <>
     <TableContainer component={Paper} className='table'>
@@ -77,17 +29,17 @@ export default function List() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {transactions ? transactions.map((row,index) => (
             <TableRow key={row.id}>
-              <TableCell>{row.transactionId}</TableCell>
+              <TableCell>{row.id}</TableCell>
               <TableCell className="table-cell">{row.name}</TableCell>
               <TableCell className="table-cell">{row.loanName}</TableCell>
-              <TableCell className="table-cell">{row.amount}</TableCell>
-              <TableCell className="table-cell">{row.method}</TableCell>
-              <TableCell className="table-cell">{row.date}</TableCell>
-              <TableCell className="table-cell">{row.time}</TableCell>
+              <TableCell className="table-cell">{parseFloat(row.amount).toFixed(2)}</TableCell>
+              <TableCell className="table-cell">{row.paymentMethod}</TableCell>
+              <TableCell className="table-cell">{row.paymentDate}</TableCell>
+              <TableCell className="table-cell">{row.paymentTime}</TableCell>
             </TableRow>
-          ))}
+          )):<div>NO TRANSACTIONS</div>}
         </TableBody>
       </Table>
     </TableContainer>

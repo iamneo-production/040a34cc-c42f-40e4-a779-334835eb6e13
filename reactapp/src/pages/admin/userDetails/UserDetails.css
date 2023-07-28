@@ -1,0 +1,12 @@
+.user-info-top{
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+.user-info-left{
+    flex: 1;
+    box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+}
+.user-info-right{
+    flex: 2;
+}

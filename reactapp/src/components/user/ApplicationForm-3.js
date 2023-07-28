@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./ApplicationForm-2.css";
+import "./ApplicationForm2.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { fileRequest, request } from "../../auth/Axios";
 
 const ApplicationUpload = () => {
   const [file1, setFile1] = useState(null);
@@ -15,13 +16,16 @@ const ApplicationUpload = () => {
   const [file10, setFile10] = useState(null);
   const [file11, setFile11] = useState(null);
   const [isDataCorrect, setIsDataCorrect] = useState(false);
+  const [loanDetails,setLoanDetails]=useState(null);
 
-  var { userId, loanId } = useParams();
+  var { userId, loanApplicationId, loanId } = useParams();
 
   const ui = parseInt(userId);
-  const i = parseInt(loanId);
+  const i = parseInt(loanApplicationId);
+  const loanId2=parseInt(loanId);
+  const navigate=useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
 
     const form = new FormData();
@@ -73,21 +77,33 @@ const ApplicationUpload = () => {
     } else {
       alert("Please fill all the details");
     }
+    console.log(form);
 
-    fetch(`http://localhost:5050/image/upload/${ui}/${i}`, {
-      method: "POST", // or 'PUT'
-      body: form,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-        // const { loanId, userId } = data; // Extract id and userId from the response data
-        // const navigateEndpoint = `upload/${userId}/${loanId}`;
-        // navigate(navigateEndpoint);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    try {
+        const response = await fileRequest('post', `/image/upload/${ui}/${i}`, form);
+        console.log("Success:", response.data);
+      } catch (error) {
+        console.log(error); 
+      }
+      const sendUserLoan=async()=>{
+      const userLoan={
+        userId:window.id,
+        loanId:loanId2,
+        loanAmount:window.loanAmount,
+        loanTenure:window.loanTenure,
+        educationPeriod:window.educationPeriod,
+        loanStatus:"Pending"
+      };
+      console.log(userLoan);
+      try {
+        const response = await request('post', '/loans', userLoan);
+        console.log("Success:", response.data);
+        navigate("/user/dashboard");
+      } catch (error) {
+        console.log(error); 
+      }
+    }
+    sendUserLoan();
   };
 
   const handleFileChange = (e, setFileState) => {
@@ -95,6 +111,8 @@ const ApplicationUpload = () => {
   };
 
   return (
+    <div className="user-container">
+      <div className="user-dashboard-container">
     <form onSubmit={handleSubmit} className="form">
       <label className="headings">
         <h2>Upload Documents</h2>
@@ -213,6 +231,8 @@ const ApplicationUpload = () => {
 
       <input type="submit" value="Submit" className="input" />
     </form>
+    </div>
+    </div>
   );
 };
 

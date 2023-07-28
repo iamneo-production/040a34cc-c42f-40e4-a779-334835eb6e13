@@ -10,10 +10,15 @@ export default function TableComponent(props) {
         const value=event.target.value;
             setSearchTerm(value);
         }
-        const filtered=props.rows.filter((user)=>
-            (user.date && user.date.includes(searchTerm)) || 
-            user.name.toLowerCase().includes(searchTerm.toLowerCase())
+        const filtered=props.rows && props.rows.filter((user)=>
+            (user.paymentDate && user.paymentDate.includes(searchTerm)) || 
+            (user.firstName && user.firstName.toLowerCase().includes(searchTerm.toLowerCase())) ||
+            (user.email && user.email.toLowerCase().includes(searchTerm.toLowerCase())) ||
+            (user.loanName && user.loanName.toLowerCase().includes(searchTerm.toLowerCase())) ||
+            (user.name && user.name.toLowerCase().includes(searchTerm.toLowerCase()))
         );
+        console.log(filtered);
+        console.log(props.rows);
         //setFilteredUsers(filtered);
   return (
     <>

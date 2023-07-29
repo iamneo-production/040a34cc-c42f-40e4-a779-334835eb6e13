@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.educationloan.PortalBackend.entity.LoanApplication2;
-import com.educationloan.PortalBackend.service.LoanApplication2Service;
+import com.examly.springapp.model.LoanApplication2;
+import com.examly.springapp.service.LoanApplication2Service;
 
 @RestController
 @RequestMapping("/loan-applications2")

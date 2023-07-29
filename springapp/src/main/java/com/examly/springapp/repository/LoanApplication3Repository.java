@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.educationloan.PortalBackend.entity.LoanApplication3;
+import com.examly.springapp.model.LoanApplication3;
 
 @Repository
 public interface LoanApplication3Repository extends JpaRepository<LoanApplication3, Long> {

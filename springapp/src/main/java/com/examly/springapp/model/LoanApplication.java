@@ -72,8 +72,10 @@ public class LoanApplication {
 
 	// loan status
 	private String status = "pending";
+	private String purpose;
+	private double loanAmount;
 	@DateTimeFormat(pattern="dd-MM-yyyy")
-	private LocalDate applyDate = LocalDate.now();
+	private LocalDate applicationDate = LocalDate.now();
 
 	public Long getId() {
 		return id;
@@ -84,13 +86,7 @@ public class LoanApplication {
 	}
 	
 
-	public LocalDate getApplyDate() {
-		return applyDate;
-	}
-
-	public void setApplyDate(LocalDate applyDate) {
-		this.applyDate = applyDate;
-	}
+	
 
 	public LoanApplication2 getLoanApplication2() {
 		return loanApplication2;
@@ -130,6 +126,12 @@ public class LoanApplication {
 
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
+	}
+	public void setApplicationDate(LocalDate date){
+		this.applicationDate=date;
+	}
+	public LocalDate getApplicationDate(){
+		return applicationDate;
 	}
 
 	public String getLastName() {

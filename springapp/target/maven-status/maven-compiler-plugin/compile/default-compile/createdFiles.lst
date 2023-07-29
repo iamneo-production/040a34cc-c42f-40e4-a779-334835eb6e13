@@ -30,14 +30,20 @@ com/examly/springapp/security/CustomUserDetailsService.class
 com/examly/springapp/service/PaymentService.class
 com/examly/springapp/controller/LoanApplication2Controller.class
 com/examly/springapp/service/UserService.class
+com/examly/springapp/repository/PaymentHistoryRepository.class
+com/examly/springapp/model/LoanStatus.class
+com/examly/springapp/service/PaymentHistoryService.class
 com/examly/springapp/service/LoanApplicationService.class
 com/examly/springapp/config/CorsFilter.class
 com/examly/springapp/payload/ErrorDetails.class
 com/examly/springapp/exception/UserAlreadyExistsException.class
 com/examly/springapp/controller/LoginController.class
+com/examly/springapp/service/LoanStatusServiceImpl.class
+com/examly/springapp/repository/LoanStatusRepository.class
 com/examly/springapp/exception/GlobalExceptionHandler.class
 com/examly/springapp/controller/RegistrationController.class
 com/examly/springapp/SpringappApplication.class
+com/examly/springapp/service/PaymentHistoryServiceImpl.class
 com/examly/springapp/exception/ResourceNotFoundException.class
 com/examly/springapp/model/VerificationToken.class
 com/examly/springapp/config/WebAppInitializer.class
@@ -50,19 +56,18 @@ com/examly/springapp/controller/AdminController.class
 com/examly/springapp/payload/LoginDto.class
 com/examly/springapp/model/LoanApplication.class
 com/examly/springapp/security/JwtAuthenticationEntryPoint.class
+com/examly/springapp/controller/PaymentHistoryController.class
 com/examly/springapp/repository/UserLoanRepository.class
 com/examly/springapp/model/PasswordResetToken.class
 com/examly/springapp/model/Payment.class
 com/examly/springapp/repository/UserRepository.class
-<<<<<<< HEAD
-com/examly/springapp/service/PaymentServiceImpl.class
-com/examly/springapp/SpringappApplication.class
-=======
->>>>>>> 1464fa3adbb5645076c29549879af6a646585c82
 com/examly/springapp/controller/PaymentController.class
+com/examly/springapp/controller/LoanStatusController.class
 com/examly/springapp/event/RegistrationCompleteEvent.class
+com/examly/springapp/model/PaymentHistory.class
 com/examly/springapp/security/JwtAuthenticationFilter.class
 com/examly/springapp/payload/CurrentUserDTO.class
+com/examly/springapp/service/LoanStatusService.class
 com/examly/springapp/security/JwtTokenProvider.class
 com/examly/springapp/controller/LoanController.class
 com/examly/springapp/service/impl/UserLoanServiceImpl.class
@@ -72,11 +77,6 @@ com/examly/springapp/repository/LoanApplication3Repository.class
 com/examly/springapp/exception/APIException.class
 com/examly/springapp/controller/LoanApplicationController.class
 com/examly/springapp/service/LoanServiceImpl.class
-<<<<<<< HEAD
-com/examly/springapp/service/LoanService.class
-com/examly/springapp/model/User.class
-=======
 com/examly/springapp/service/AuthService.class
 com/examly/springapp/service/LoanService.class
 com/examly/springapp/service/LoanApplication2Service.class
->>>>>>> 1464fa3adbb5645076c29549879af6a646585c82

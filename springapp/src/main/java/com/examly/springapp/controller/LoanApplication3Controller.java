@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.educationloan.PortalBackend.entity.LoanApplication3;
-import com.educationloan.PortalBackend.service.LoanApplication3Service;
+import com.examly.springapp.model.LoanApplication3;
+import com.examly.springapp.service.LoanApplication3Service;
 
 @RestController
 @RequestMapping("/image")

@@ -1,0 +1,20 @@
+.admin-settings-form{
+    padding: 20px;
+}
+.admin-settings-input{
+    margin-bottom: 10px;
+    width: 250px;
+    height: 30px;
+}
+.admin-settings-button{
+    padding: 5px;
+    height: 30px;
+    background-color: #000080;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: #000080;
+}
+.admin-settings-button:hover{
+    background-color: #0707b4;
+}

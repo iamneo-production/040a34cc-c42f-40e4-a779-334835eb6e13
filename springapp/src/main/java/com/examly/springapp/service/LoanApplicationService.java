@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.educationloan.PortalBackend.entity.LoanApplication;
-import com.educationloan.PortalBackend.entity.LoanApplication2;
-import com.educationloan.PortalBackend.entity.LoanApplication3;
-import com.educationloan.PortalBackend.repository.LoanApplicationRepository;
+import com.examly.springapp.model.LoanApplication;
+import com.examly.springapp.model.LoanApplication2;
+import com.examly.springapp.model.LoanApplication3;
+import com.examly.springapp.repository.LoanApplicationRepository;
 
 @Service
 public class LoanApplicationService {

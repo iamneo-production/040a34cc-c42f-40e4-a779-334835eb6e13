@@ -11,15 +11,19 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.educationloan.PortalBackend.entity.LoanApplication3;
-import com.educationloan.PortalBackend.repository.LoanApplication3Repository;
+import com.examly.springapp.model.LoanApplication3;
+import com.examly.springapp.model.LoanApplication;
+import com.examly.springapp.repository.LoanApplication3Repository;
 
-import jakarta.mail.MessagingException;
+import javax.mail.MessagingException;
 
 @Service
 public class LoanApplication3Service {
 
 	private final LoanApplication3Repository loan3Repo;
+
+	@Autowired
+	private JavaMailSender mailSender;
 
 	@Autowired
 	public LoanApplication3Service(LoanApplication3Repository loan3Repo) {

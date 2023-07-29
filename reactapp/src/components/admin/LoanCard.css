@@ -1,0 +1,209 @@
+.loan-page{
+    text-align: center;
+    color: #000080;
+    margin-bottom: 100px;
+}
+.loan-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .admin-loans{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .create-loan-button{
+    height: 30px;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-right: 10px;
+    padding: 5px;
+    color: white;
+    background-color: #000080;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    font-weight: 500;
+}
+.create-loan-button:hover{
+    background-color: #0d0dc0;
+}
+  
+  .loan-card {
+    width: calc(33.33% - 20px);
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .loan-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .loan-details {
+    margin-bottom: 10px;
+  }
+  
+  .buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .more-info-btn,
+  .apply-btn {
+    background-color: #000080;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .more-info-btn:hover,
+  .apply-btn:hover {
+    opacity: 0.8;
+  }
+  
+  .loan-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    text-align: center;
+  }
+  .loan-information{
+    margin-top: 10px;
+    color: black;
+    text-align: justify;
+  }
+  .information-buttons{
+    justify-content: space-between;
+    padding: 5px 25px;
+  }
+  .close-btn {
+    background-color: #000080;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 80px;
+  }
+  
+  .close-btn:hover {
+    opacity: 0.8;
+  }
+  .loan-edit-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .edit-form-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 600px;
+    height: max-content;
+  }
+  .edit-form-close{
+    float: right;
+    cursor: pointer;
+  }
+  .edit-loan-image{
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+    width: 70%;
+    font-size: 16px;
+  }
+  .edit-loan-input{
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+    width: 70%;
+    height: 40px;
+    font-size: 16px;
+}
+.edit-loan-message{
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+    width: 70%;
+    font-size: 16px;
+}
+.edit-box{
+  height: 50px;
+}
+.edit-loan-title{
+    color: #000080;
+    font-size: 24px;
+    font-weight: bold;
+}
+  .edit-loan-label{
+    float: left;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .edit-action{
+    justify-content: space-between;
+    display: flex;
+    margin-top: 150px;
+    padding: 20px;
+  }
+  .edit-send-button{
+    max-width: fit-content;
+    margin-left: 10px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #000080;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-send-button:hover{
+    background-color: #04049c;
+}
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .loan-card {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .loan-card {
+      width: 100%;
+    }
+  }
+  

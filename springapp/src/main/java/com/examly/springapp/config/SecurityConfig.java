@@ -2,8 +2,6 @@ package com.examly.springapp.config;
 
 import com.examly.springapp.security.JwtAuthenticationEntryPoint;
 import com.examly.springapp.security.JwtAuthenticationFilter;
-import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
-import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,12 +17,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableMethodSecurity
-@SecurityScheme(
-        name = "Bear Authentication",
-        type = SecuritySchemeType.HTTP,
-        bearerFormat = "JWT",
-        scheme = "bearer"
-)
 public class SecurityConfig {
 
     private UserDetailsService userDetailsService;
@@ -51,10 +43,6 @@ public class SecurityConfig {
         return configuration.getAuthenticationManager();
     }
 
-    @Bean
-    public CorsFilter corsFilter() {
-        return new CorsFilter();
-    }
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -63,10 +51,20 @@ public class SecurityConfig {
 
                 .csrf().disable()
                 .authorizeHttpRequests((authorize) ->
-                        authorize.requestMatchers("/login").permitAll()
-                                .requestMatchers("/register").permitAll()
-                                .requestMatchers("/users").hasRole("USER")
-                                .requestMatchers("/admin").hasRole("ADMIN")
+                        authorize.antMatchers("/login").permitAll()
+                                .antMatchers("/register/**").permitAll()
+                                .antMatchers("/password/**").permitAll()
+                                .antMatchers("/roles").permitAll()
+                                .antMatchers("/currentUser").permitAll()
+                                .antMatchers("/users/**").permitAll()
+                                .antMatchers("/admin/**").permitAll()
+                                .antMatchers("/loan/**").permitAll()
+                                .antMatchers("/loans/**").permitAll()
+                                .antMatchers("/payments/**").permitAll()
+                                .antMatchers("/notifications/**").permitAll()
+                                .antMatchers("/loan-applications/**").permitAll()
+                                .antMatchers("/loan-applications2/**").permitAll()
+                                .antMatchers("/image/**").permitAll()
                                 .anyRequest().authenticated()
 
                 ).exceptionHandling( exception -> exception
@@ -78,6 +76,7 @@ public class SecurityConfig {
         http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+
     }
 
 }

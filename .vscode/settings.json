@@ -12,11 +12,12 @@
 =======
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.sourcePaths": [
-<<<<<<< HEAD
         "junit/test/java",
-=======
->>>>>>> Education-loan-portal-SURIYADANASEKAR
         "springapp/src/main/java/com/examly/springapp"
+<<<<<<< HEAD
     ]
 >>>>>>> origin/main
+=======
+    ],
+>>>>>>> Education-loan-portal-karthi-0212
 }

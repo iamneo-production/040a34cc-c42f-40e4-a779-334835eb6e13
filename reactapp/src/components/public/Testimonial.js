@@ -8,9 +8,9 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import  { Navigation, Pagination, Scrollbar ,EffectCoverflow} from 'swiper';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import StarRateIcon from '@mui/icons-material/StarRate';
+// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import StarRateIcon from '@mui/icons-material/StarRate';
 
 import './Testimonial.css';
 import testimonialDetails from './TestimonialDetails';
@@ -48,12 +48,12 @@ export default function Testimonial() {
                 <img src={testimonial.image} alt='swiper-image' className='swiper-image'/>
                 <h3 className='swiper-name'>{testimonial.name}</h3>
                 <div className='swiper-message'>{testimonial.message}</div>
-                <div className='swiper-rating'>
+                {/* <div className='swiper-rating'>
                   Rating : <StarRateIcon style={{fontSize:10}} className='star-icon'/>
                            <StarRateIcon style={{fontSize:10}} className='star-icon'/>
                            <StarRateIcon style={{fontSize:10}} className='star-icon'/>
                            <StarRateIcon style={{fontSize:10}} className='star-icon'/>
-                           <StarRateIcon style={{fontSize:10}} className='star-icon'/></div>
+                           <StarRateIcon style={{fontSize:10}} className='star-icon'/></div> */}
               </SwiperSlide>
             ))}
           </Swiper>

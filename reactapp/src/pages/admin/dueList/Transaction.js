@@ -20,7 +20,11 @@ export default function DueList() {
   useEffect(() => {
     const dueList = async () => {
       try {
+<<<<<<< HEAD
         const response = await request('get', '/loans/due');
+=======
+        const response = await request('get', '/userloans/due');
+>>>>>>> Education-loan-portal-karthi-0212
         setDueRows(response.data);
         console.log(response.data);
         setIsLoading(false);

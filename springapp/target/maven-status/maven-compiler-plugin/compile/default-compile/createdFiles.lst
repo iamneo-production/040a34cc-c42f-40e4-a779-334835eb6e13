@@ -1,6 +1,6 @@
 com/examly/springapp/controller/UserLoanController.class
-com/examly/springapp/model/UserLoans.class
 com/examly/springapp/controller/LoanApplication3Controller.class
+com/examly/springapp/model/UserLoans.class
 com/examly/springapp/service/UserLoanService.class
 com/examly/springapp/repository/PasswordResetTokenRepository.class
 com/examly/springapp/repository/PaymentRepository.class
@@ -21,6 +21,8 @@ com/examly/springapp/service/impl/UserServiceImpl.class
 com/examly/springapp/model/Loan.class
 com/examly/springapp/model/LoanApplication2.class
 com/examly/springapp/controller/PasswordController.class
+com/examly/springapp/model/Loan.class
+com/examly/springapp/model/LoanApplication2.class
 com/examly/springapp/repository/VerificationTokenRepository.class
 com/examly/springapp/payload/PasswordRequestUtil.class
 com/examly/springapp/service/PaymentServiceImpl.class
@@ -32,6 +34,10 @@ com/examly/springapp/controller/LoanApplication2Controller.class
 com/examly/springapp/service/UserService.class
 com/examly/springapp/repository/PaymentHistoryRepository.class
 com/examly/springapp/model/LoanStatus.class
+<<<<<<< HEAD
+=======
+com/examly/springapp/service/LoanApplicationService.class
+>>>>>>> 1c8ffcfa6d57d9e3399fefbe0a04154392cffcf9
 com/examly/springapp/service/PaymentHistoryService.class
 com/examly/springapp/service/LoanApplicationService.class
 com/examly/springapp/config/CorsFilter.class

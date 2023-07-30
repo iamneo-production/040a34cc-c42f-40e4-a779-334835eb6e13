@@ -2,14 +2,14 @@ import React,{useState, useEffect, useRef} from 'react'
 import {Outlet} from 'react-router-dom'
 import logo from '../../images/logo.jpg';
 import './NavbarStyles.css';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import CloseIcon from '@mui/icons-material/Close';
-// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DropDown from './DropDown';
 import Calculator from './Calculator';
 
 import { HashLink as Link } from 'react-router-hash-link';
-// import {Link} from 'react-scroll'
+import {Link} from 'react-scroll'
 
 function Navbar() {
 
@@ -44,14 +44,14 @@ function Navbar() {
     <>
         <nav ref={dropDownRef} className='navbar-container'>
             <div id="menu" onClick={handleClick}>
-                {/* {!openMenu ? <MenuIcon 
+                {!openMenu ? <MenuIcon 
                             style={{fontSize:30}} 
                             className="icon"
                           /> : <CloseIcon 
                                     style={{fontSize:30}} 
                                     className="icon"
                                 />
-                } */}
+                }
             </div>
             <Link to="/" >
                 <img style={{maxWidth:'90px'}} src={logo} alt='LOGO'/>

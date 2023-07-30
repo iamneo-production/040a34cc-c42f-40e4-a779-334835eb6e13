@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-// import { Facebook,Twitter,Instagram,Email,Phone, YouTube } from '@mui/icons-material';
+import { Facebook,Twitter,Instagram,Email,Phone, YouTube } from '@mui/icons-material';
 import './Footer.css';
 
 const Footer = () => {

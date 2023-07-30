@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './LoanCard.css';
-// import { Close } from '@mui/icons-material';
+import { Close } from '@mui/icons-material';
 import { request } from '../../auth/Axios';
 
 const LoanCard = ({ loan }) => {

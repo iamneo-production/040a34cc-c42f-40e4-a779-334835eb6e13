@@ -1,20 +1,15 @@
-import './App.css';
-import photo from './im.jpg';
-import pic from './img2.jpg';
+import photo from "../../images/aboutimage1.jpg";
+import pic from "../../images/aboutimage2.jpg";
+import './About.css';
 
-
-function App() {
+function About() {
   return (
     <>
+    <div className="about-us-title"><span>About Us</span></div>
       <div class="we-are-block">
         <div id="about-us-section">
           <div class="about-us-image">
-            <img
-              src={pic}
-              width="808"
-              height="458"
-              alt="Lobby Image"
-            />
+            <img src={pic} width="708" height="458" alt="Lobby Image" />
           </div>
 
           <div class="about-us-info">
@@ -34,20 +29,17 @@ function App() {
               you.
             </p>
 
-            <a href="#" title="About Us Button">
+            <a className="about-us-a" href="#" title="About Us Button">
               HOME
             </a>
+            <br/>
+            <br/>
           </div>
         </div>
 
         <div id="history-section">
           <div class="history-image">
-            <img
-              src={photo}
-              width="951"
-              height="471"
-              alt="Building Pic"
-            />
+            <img src={photo} width="900" height="900" alt="Building Pic" />
           </div>
 
           <div class="history-info">
@@ -67,7 +59,7 @@ function App() {
               professionalism and efficiency.
             </p>
 
-            <a href="#" title="History Button">
+            <a className="about-us-a" href="#" title="History Button">
               SEARCH LOANS
             </a>
           </div>
@@ -77,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default About;

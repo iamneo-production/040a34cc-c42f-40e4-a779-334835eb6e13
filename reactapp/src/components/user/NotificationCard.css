@@ -1,0 +1,24 @@
+.notification-card-container{
+    flex: 2;
+    box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+    padding: 10px;
+    margin: 20px;
+}
+.notification-card-subject{
+    font-weight: bold;
+    color: #000080;
+    font-size: 20px;
+}
+.notification-card-message{
+    font-weight: 500;
+    color: gray;
+    font-size: 16px;
+}
+.notification-card-bottom{
+    font-size: 14px;
+    font-weight: 500;
+    color: gray;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+}

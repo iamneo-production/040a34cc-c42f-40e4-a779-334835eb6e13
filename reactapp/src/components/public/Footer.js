@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Facebook,Twitter,Instagram,Email,Phone, YouTube } from '@mui/icons-material';
+// import { Facebook,Twitter,Instagram,Email,Phone, YouTube } from '@mui/icons-material';
 import './Footer.css';
 
 const Footer = () => {
@@ -19,16 +19,16 @@ const Footer = () => {
           <p className="footer-subtitle">Connect With Us</p>
           <div className="footer-social-media">
             <a href="#" className="footer-icon">
-                <Facebook style={{fontSize:30,color:'#3b5998'}} className="material-icons"/>
+                {/* <Facebook style={{fontSize:30,color:'#3b5998'}} className="material-icons"/> */}
             </a>
             <a href="#" className="footer-icon">
-                <Twitter style={{fontSize:30,color:'#00acee'}} className="material-icons"/>
+                {/* <Twitter style={{fontSize:30,color:'#00acee'}} className="material-icons"/> */}
             </a>
             <a href="#" className="footer-icon">
-                <Instagram style={{fontSize:30,color:'#e95950'}} className="material-icons"/>
+                {/* <Instagram style={{fontSize:30,color:'#e95950'}} className="material-icons"/> */}
             </a>
             <a href="#" className="footer-icon">
-                <YouTube style={{fontSize:30,color:'#c4302b'}} className="material-icons"/>
+                {/* <YouTube style={{fontSize:30,color:'#c4302b'}} className="material-icons"/> */}
             </a>
           </div>
         </div>

@@ -3,8 +3,8 @@ import { useState,useRef } from 'react'
 //import { CalculatorContext } from './CalculatorContext';
 import Draggable from 'react-draggable';
 import './Calculator.css';
-import CloseIcon from '@mui/icons-material/Close';
-import { CalculateOutlined, CalculateRounded } from '@mui/icons-material';
+// import CloseIcon from '@mui/icons-material/Close';
+// import { CalculateOutlined, CalculateRounded } from '@mui/icons-material';
 
 export default function Calculator() {
     //const {isCalculatorVisible} = useContext(CalculatorContext);
@@ -41,7 +41,7 @@ export default function Calculator() {
 
   return (
     <>
-    <span className='calculator-button' onClick={toggleCalculatorVisible}><CalculateOutlined style={{color:'#000080'}} /> </span>
+    {/* <span className='calculator-button' onClick={toggleCalculatorVisible}><CalculateOutlined style={{color:'#000080'}} /> </span> */}
     {isCalculatorVisible && (
         <Draggable
             nodeRef={nodeRef}
@@ -53,7 +53,7 @@ export default function Calculator() {
         >
             Education Loan Calculator
         </div>
-        <span onClick={toggleCalculatorVisible} className='calculator-close-icon'><CloseIcon/></span>
+        {/* <span onClick={toggleCalculatorVisible} className='calculator-close-icon'><CloseIcon/></span> */}
         <div className='calculator-body'>
             <div className='input-group'>
                 <label style={{marginLeft:'0'}}>Loan Amount : </label>

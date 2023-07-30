@@ -1,4 +1,4 @@
-import { KeyboardArrowDown, KeyboardArrowUp, MoreVert } from '@mui/icons-material'
+// import { KeyboardArrowDown, KeyboardArrowUp, MoreVert } from '@mui/icons-material'
 import React, { useEffect, useState } from 'react'
 import './Featured.css';
 import { CircularProgressbar } from 'react-circular-progressbar'
@@ -93,7 +93,7 @@ export default function Featured() {
           <h1 className='featured-title'>
             Total Transactions
           </h1>
-          <MoreVert fontSize='small' />
+          {/* <MoreVert fontSize='small' /> */}
         </div>
         <div className='bottom'>
           <div className='featuredChart'>
@@ -106,21 +106,21 @@ export default function Featured() {
             <div className='featured-chart-item'>
               <div className='featured-chart-title'>Target</div>
               <div className={`featured-chart-result ${getTargetClassName()}`}>
-                {totalRepays > 25000 ? <KeyboardArrowUp fontSize='small' /> : <KeyboardArrowDown fontSize='small' />}
+                {/* {totalRepays > 25000 ? <KeyboardArrowUp fontSize='small' /> : <KeyboardArrowDown fontSize='small' />} */}
                 <div className='resultAmount'>Rs 25000</div>
               </div>
             </div>
             <div className='featured-chart-item'>
               <div className='featured-chart-title'>Today</div>
               <div className={`featured-chart-result ${getTodayRepayClassName()}`}>
-                {todayRepay > yesterdayRepay ? <KeyboardArrowUp fontSize='small' /> : <KeyboardArrowDown fontSize='small' />}
+                {/* {todayRepay > yesterdayRepay ? <KeyboardArrowUp fontSize='small' /> : <KeyboardArrowDown fontSize='small' />} */}
                 <div className='resultAmount'>Rs {parseInt(todayRepay)}</div>
               </div>
             </div>
             <div className='featured-chart-item'>
               <div className='featured-chart-title'>Last Month</div>
               <div className={`featured-chart-result ${getLastMonthRepayClassName()}`}>
-                {lastMonthRepay > prevLastMonthRepay ? <KeyboardArrowUp fontSize='small' /> : <KeyboardArrowDown fontSize='small' />}
+                {/* {lastMonthRepay > prevLastMonthRepay ? <KeyboardArrowUp fontSize='small' /> : <KeyboardArrowDown fontSize='small' />} */}
                 <div className='result-amount'>Rs {parseInt(lastMonthRepay)}</div>
               </div>
             </div>

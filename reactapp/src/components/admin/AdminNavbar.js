@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import {Link, Outlet } from 'react-router-dom';
 import './AdminNavbar.css';
 import logo from '../../images/logo2.jpg';
-import {Dashboard, Description, Logout, People, Settings, Payment, AccountBalance } from '@mui/icons-material';
+// import {Dashboard, Description, Logout, People, Settings, Payment, AccountBalance } from '@mui/icons-material';
 export default function AdminNavbar() {
     const [activePage,setActivePage]=useState('/dashboard');
     const handlePage=(page)=>{
@@ -21,7 +21,7 @@ export default function AdminNavbar() {
                 onClick={()=>handlePage('/dashboard')}
             >
                 <Link to="/admin/dashboard" className="admin-navbar-link">
-                    <Dashboard className="admin-navbar-icon"/>
+                    {/* <Dashboard className="admin-navbar-icon"/> */}
                     <span className="admin-navbar-text" style={{color:'#000080'}}>Dashboard</span>
                 </Link>
             </li>
@@ -29,7 +29,7 @@ export default function AdminNavbar() {
                 onClick={()=>handlePage('/users')}
             >
                 <Link to="/admin/users" className="admin-navbar-link">
-                    <People className="admin-navbar-icon" />
+                    {/* <People className="admin-navbar-icon" /> */}
                     <span className="admin-navbar-text" style={{color:'#000080'}}>Users</span>
                 </Link>
             </li>
@@ -37,7 +37,7 @@ export default function AdminNavbar() {
                 onClick={()=>handlePage('/applications')}
             >
                 <Link to="/admin/applications" className="admin-navbar-link">
-                    <Description className="admin-navbar-icon"/>
+                    {/* <Description className="admin-navbar-icon"/> */}
                     <span className="admin-navbar-text" style={{color:'#000080'}}>Applications</span>
                 </Link>
             </li>
@@ -45,7 +45,7 @@ export default function AdminNavbar() {
                 onClick={()=>handlePage('/loans')}
             >
                 <Link to="/admin/loans" className="admin-navbar-link">
-                    <AccountBalance className="admin-navbar-icon"/>
+                    {/* <AccountBalance className="admin-navbar-icon"/> */}
                     <span className="admin-navbar-text" style={{color:'#000080'}}>Loans</span>
                 </Link>
             </li>
@@ -53,7 +53,7 @@ export default function AdminNavbar() {
                 onClick={()=>handlePage('/transactions')}
             >
                 <Link to="/admin/transactions" className="admin-navbar-link">
-                    <Payment className='admin-navbar-icon' />
+                    {/* <Payment className='admin-navbar-icon' /> */}
                     <span className="admin-navbar-text" style={{color:'#000080'}}>Transactions</span>
                 </Link>
             </li>
@@ -61,7 +61,7 @@ export default function AdminNavbar() {
                 onClick={()=>handlePage('/dueList')}
             >
                 <Link to="/admin/dueList" className="admin-navbar-link">
-                    <Payment className='admin-navbar-icon' />
+                    {/* <Payment className='admin-navbar-icon' /> */}
                     <span className="admin-navbar-text" style={{color:'#000080'}}>Dues</span>
                 </Link>
             </li>
@@ -69,13 +69,13 @@ export default function AdminNavbar() {
                 onClick={()=>handlePage('/settings')}
             >
                 <Link to="/admin/settings" className="admin-navbar-link">
-                    <Settings className="admin-navbar-icon"/>
+                    {/* <Settings className="admin-navbar-icon"/> */}
                     <span className="admin-navbar-text" style={{color:'#000080'}}>Settings</span>
                 </Link>
             </li>
             <li className='admin-navbar-item'>
                 <Link to="/admin/logout" className="admin-navbar-link">
-                    <Logout className='admin-navbar-icon'/>
+                    {/* <Logout className='admin-navbar-icon'/> */}
                     <span className="admin-navbar-text">Logout</span>
                 </Link>
             </li>

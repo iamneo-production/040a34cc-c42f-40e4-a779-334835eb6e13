@@ -11,8 +11,7 @@ import LoansInAdmin from './pages/admin/loans/LoansInAdmin';
 import AdminSettings from './pages/admin/settings/AdminSettings';
 import Application from './pages/admin/applications/Application';
 import Signup from './pages/public/signup/Signup';
-import NavbarUserOutlet from './pages/user/user Dashboard/NavbarUserOutlet';
-import UserDashboard from './pages/user/user Dashboard/UserDashboard';
+import NavbarUserOutlet from './pages/user/userDashboard/NavbarUserOutlet';
 import Notification from './pages/user/notifications/Notification';
 import PaymentSection from './pages/user/payment/PaymentSection';
 import UserAnalysis from './pages/user/analysis/UserAnalysis';
@@ -24,6 +23,7 @@ import ApplicationUpload from './components/user/ApplicationForm-3';
 import Applicationform from './components/user/ApplicationForm-1';
 import ApplicationFormContinue from './components/user/ApplicationForm-2';
 import ApplicationForm from './pages/user/application/ApplicationForm';
+import UserDashboard from './pages/user/userDashboard/UserDasboard';
 
 function App() {
   return (

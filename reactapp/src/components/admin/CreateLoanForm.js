@@ -1,4 +1,4 @@
-import { Close } from '@mui/icons-material'
+// import { Close } from '@mui/icons-material'
 import React,{useState} from 'react';
 import axios from 'axios';
 import { request } from '../../auth/Axios';
@@ -42,7 +42,7 @@ export default function CreateLoanForm({onClose}) {
             <div className='notification-form-content'>
                 <div className='notification-form'>
                 <span className='notification-title'>Create Loan</span>
-                    <span className='notification-close' onClick={onClose}><Close/></span>
+                    {/* <span className='notification-close' onClick={onClose}><Close/></span> */}
                     <br/>
                     <input 
                       type='file' 

@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import './Dashboard.css'
 import Widgets from '../../../components/admin/Widgets'
-import { DescriptionOutlined, NotificationsOutlined, PaymentOutlined, PersonOutlined } from '@mui/icons-material';
+//import { DescriptionOutlined, NotificationsOutlined, PaymentOutlined, PersonOutlined } from '@mui/icons-material';
 import Featured from '../../../components/admin/Featured';
 import Chart from '../../../components/admin/Chart';
 import List from '../../../components/admin/List';
@@ -66,10 +66,10 @@ export default function Dashboard() {
         counter: usersCount,
         link: "See all users",
         to:"/admin/users",
-        icon: <PersonOutlined
-          className='widget-icon'
-          style={{ color: "crimson", backgroundColor: "rgba(255,0,0,0.2)" }}
-        />
+        // icon: <PersonOutlined
+        //   className='widget-icon'
+        //   style={{ color: "crimson", backgroundColor: "rgba(255,0,0,0.2)" }}
+        // />
       },
       {
         id: 2,
@@ -77,10 +77,10 @@ export default function Dashboard() {
         counter: applicationsCount,
         link: "See all applications",
         to:'/admin/applications',
-        icon: <DescriptionOutlined
-          className='widget-icon'
-          style={{ color: "purple", backgroundColor: "rgba(128,0,128,0.2)" }}
-        />
+        // icon: <DescriptionOutlined
+        //   className='widget-icon'
+        //   style={{ color: "purple", backgroundColor: "rgba(128,0,128,0.2)" }}
+        // />
       },
       {
         id: 3,
@@ -88,10 +88,10 @@ export default function Dashboard() {
         counter: transactionsCount,
         link: "See all transactions", 
         to:"/admin/transactions",  
-        icon: <PaymentOutlined
-          className='widget-icon'
-          style={{ color: "green", backgroundColor: "rgba(0,128,0,0.2)" }}
-        />
+        // icon: <PaymentOutlined
+        //   className='widget-icon'
+        //   style={{ color: "green", backgroundColor: "rgba(0,128,0,0.2)" }}
+        // />
       },
       {
         id: 4,
@@ -99,10 +99,10 @@ export default function Dashboard() {
         counter: dueCount, 
         link: "See all due payments",
         to:"/admin/dueList",
-        icon: <NotificationsOutlined
-          className='widget-icon'
-          style={{ color: "red", backgroundColor: "rgba(249, 128, 140, 0.8)" }}
-        />
+        // icon: <NotificationsOutlined
+        //   className='widget-icon'
+        //   style={{ color: "red", backgroundColor: "rgba(249, 128, 140, 0.8)" }}
+        // />
       },
     ];
 
@@ -119,7 +119,7 @@ export default function Dashboard() {
                   counter={item.counter}
                   link={item.link}
                   percentage={item.percentage}
-                  icon={item.icon}
+                  // icon={item.icon}
                   to={item.to}
                 />
               ))

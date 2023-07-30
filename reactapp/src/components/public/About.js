@@ -1,6 +1,10 @@
 import photo from "../../images/aboutimage1.jpg";
 import pic from "../../images/aboutimage2.jpg";
+<<<<<<< HEAD
 import './about.css';
+=======
+import './About.css';
+>>>>>>> Education-loan-portal-karthi-0212
 
 function About() {
   return (

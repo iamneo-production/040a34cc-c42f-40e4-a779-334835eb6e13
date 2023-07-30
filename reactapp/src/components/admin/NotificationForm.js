@@ -1,4 +1,4 @@
-import { Close } from '@mui/icons-material'
+// import { Close } from '@mui/icons-material'
 import React,{useState} from 'react'
 import './NotificationForm.css';
 import { request } from '../../auth/Axios';
@@ -32,7 +32,7 @@ export default function NotificationForm({onClose}) {
             <div className='notification-form-content'>
                 <form className='notification-form'>
                     <span className='notification-title'>Notification Form</span>
-                    <span className='notification-close' onClick={onClose}><Close/></span>
+                    {/* <span className='notification-close' onClick={onClose}><Close/></span> */}
                     <input 
                       type='text' 
                       className='notification-subject' 

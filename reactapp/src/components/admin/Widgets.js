@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Widgets.css';
-import { KeyboardArrowUp} from '@mui/icons-material';
+// import { KeyboardArrowUp} from '@mui/icons-material';
 export default function Widgets(props) {
   const navigate=useNavigate();
 
@@ -17,10 +17,10 @@ export default function Widgets(props) {
       </div>
       <div className='widget-right'>
         <div className='percentage'>
-            <KeyboardArrowUp/>
+            {/* <KeyboardArrowUp/> */}
             {props.percentage}
         </div>
-        {props.icon}
+        {/* {props.icon} */}
       </div>
     </div>
   )

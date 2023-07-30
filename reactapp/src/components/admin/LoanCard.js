@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './LoanCard.css';
-import { Close } from '@mui/icons-material';
+// import { Close } from '@mui/icons-material';
 import { request } from '../../auth/Axios';
 
 const LoanCard = ({ loan }) => {
@@ -113,7 +113,7 @@ const LoanCard = ({ loan }) => {
             <div className="loan-edit-form">
             <div className="edit-form-content">
                 <span className='edit-loan-title'>Edit Loan</span>
-                    <span className='edit-form-close' onClick={()=>setEditForm(false)}><Close/></span>
+                    {/* <span className='edit-form-close' onClick={()=>setEditForm(false)}><Close/></span> */}
                     <br/>
                     <div className='edit-box'>
                       <label className='edit-loan-label'>Image : </label>

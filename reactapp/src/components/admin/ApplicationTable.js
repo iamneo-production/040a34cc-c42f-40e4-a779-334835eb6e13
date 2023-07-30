@@ -49,7 +49,11 @@ export default function ApplicationTable({application}) {
         status:"Accepted",
       }
       try {
+<<<<<<< HEAD
         const response = await request('put', `/loans/approve/${application.userId}`);
+=======
+        const response = await request('put', `/userloans/approve/${application.userId}`);
+>>>>>>> Education-loan-portal-karthi-0212
       } catch (error) {
         console.log("Error fetching current user:", error);
       }
@@ -71,7 +75,11 @@ export default function ApplicationTable({application}) {
         console.log("Error fetching current user:", error);
       }
       try {
+<<<<<<< HEAD
         const response = await request('delete', `/loans/${application.userId}`);
+=======
+        const response = await request('delete', `/userloans/${application.userId}`);
+>>>>>>> Education-loan-portal-karthi-0212
       } catch (error) {
         console.log("Error fetching current user:", error);
       }

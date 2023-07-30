@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import "./UserDashboard.css";
 import Profile from "../../../components/user/Profile";
-import Loanstatus from "../../../components/user/Loanstatus";
+import Loanstatus from "../../../components/user/LoanStatus";
 import Paymenthis from "../../../components/user/Paymenthis";
 import { request } from "../../../auth/Axios";
 import List from "../../../components/admin/List";

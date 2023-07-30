@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import {Link, Outlet } from 'react-router-dom';
 import './AdminNavbar.css';
 import logo from '../../images/logo2.jpg';
-import {Dashboard, Description, Logout, People, Settings, Payment, AccountBalance } from '@mui/icons-material';
+//import {Dashboard, Description, Logout, People, Settings, Payment, AccountBalance } from '@mui/icons-material';
 export default function AdminNavbar() {
     const [activePage,setActivePage]=useState('/dashboard');
     const handlePage=(page)=>{

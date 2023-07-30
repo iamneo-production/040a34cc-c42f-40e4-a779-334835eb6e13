@@ -5,12 +5,6 @@ const Paymenthis = () => {
   //  Sample data
   const PaymentHistory = [
     {
-      paymentid: "101",
-      date: "11/02/22",
-      amount: 1000,
-      status: "Paid",
-    },
-    {
       paymentid: "102",
       date: "11/03/22",
       amount: 1000,
